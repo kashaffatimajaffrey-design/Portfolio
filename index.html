@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kashaf Fatima Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* Base styles */
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #111;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(90deg, #fbb1f9, #caa6ff);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    header h1 {
+      margin: 0.5rem 0;
+      font-size: 2.4rem;
+      color: #fff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    header p {
+      margin: 1rem 0 1.5rem 0;
+      font-size: 1.2rem;
+      color: #f3f3f3;
+    }
+    .header-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .header-links a {
+      font-weight: 600;
+      padding: 0.8rem 1.5rem;
+      background: rgba(255,255,255,0.3);
+      border-radius: 8px;
+      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .header-links a:hover {
+      background: rgba(255,255,255,0.6);
+      color: #000;
+      transform: translateY(-2px);
+    }
+    .contact-info {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.2);
+      border-radius: 10px;
+      display: inline-block;
+    }
+    .contact-info p {
+      margin: 0.5rem 0;
+      font-size: 1rem;
+    }
+    .email-link {
+      color: #fff;
+      font-weight: 600;
+      background: rgba(255,255,255,0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      display: inline-block;
+      margin-top: 0.5rem;
+    }
+    .email-link:hover {
+      background: rgba(255,255,255,0.4);
+    }
+
+    /* Section styles - FIXED IMAGE CONTAINER FOR VERTICAL IMAGES */
+    section {
+      display: flex;
+      align-items: flex-start; /* Changed from center to flex-start */
+      padding: 4rem 2rem;
+      gap: 3rem;
+      flex-wrap: wrap;
+      background: rgba(255,255,255,0.05);
+      margin: 2rem 0;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      backdrop-filter: blur(10px);
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    section:nth-child(even) { 
+      flex-direction: row-reverse; 
+      background: rgba(255,255,255,0.08); 
+    }
+    
+    /* IMAGE CONTAINER - ADJUSTED FOR VERTICAL IMAGES */
+    .image-container {
+      flex: 0 0 auto;
+      width: 350px; /* Narrower for vertical images */
+      min-width: 250px;
+      display: flex;
+      align-items: flex-start; /* Align to top */
+      justify-content: center;
+    }
+    
+    section img {
+      width: 100%;
+      height: auto; 
+      max-height: 450px; /* Taller for vertical images */
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      object-fit: contain; 
+      object-position: top; /* Align to top */
+    }
+    section img:hover { 
+      transform: scale(1.03); 
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+    
+    .section-text { 
+      flex: 1;
+      min-width: 300px;
+    }
+    .section-text h2 { 
+      font-size: 1.8rem; 
+      color: #5b00ff; 
+      margin-bottom: 1rem;
+      border-bottom: 3px solid #fbb1f9;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+    .section-text p { 
+      font-size: 1rem; 
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    .section-text ul {
+      padding-left: 1.5rem;
+      margin: 1rem 0;
+    }
+    .section-text li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* GitHub modal */
+    .github-modal { 
+      display: none; 
+      position: fixed; 
+      top:0; 
+      left:0; 
+      width: 100%; 
+      height: 100%; 
+      background: rgba(0,0,0,0.5); 
+      justify-content: center; 
+      align-items: center; 
+      z-index: 1000; 
+    }
+    .github-modal-content { 
+      background: #fff; 
+      padding: 2.5rem; 
+      border-radius: 15px; 
+      max-width: 450px; 
+      width: 90%; 
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    .github-modal-content h3 { 
+      color: #5b00ff;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+    }
+    .github-modal-content a { 
+      display: block; 
+      margin: 1rem 0; 
+      padding: 0.8rem;
+      font-weight: 600; 
+      color: #5b00ff;
+      background: #f5f5f5;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .github-modal-content a:hover {
+      background: #eaeaea;
+      transform: translateX(5px);
+    }
+    .github-modal-content button { 
+      margin-top: 1.5rem; 
+      padding: 0.8rem 1.5rem; 
+      border: none; 
+      background: #ff8ae0; 
+      color: #fff; 
+      border-radius: 8px; 
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .github-modal-content button:hover { 
+      background: #ff65c4;
+      transform: translateY(-2px);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(90deg, #fbb1f9, #caa6ff);
+      color: #fff;
+      margin-top: 3rem;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      color: #fff;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.2);
+      transition: 0.3s;
+    }
+    .footer-links a:hover {
+      background: rgba(255,255,255,0.4);
+    }
+
+    /* Animations */
+    .fade-in { 
+      opacity: 0; 
+      transform: translateY(20px); 
+      animation: fadeIn 0.8s forwards; 
+    }
+    @keyframes fadeIn { 
+      to { 
+        opacity: 1; 
+        transform: translateY(0); 
+      } 
+    }
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.4s; }
+    .delay-3 { animation-delay: 0.6s; }
+    .delay-4 { animation-delay: 0.8s; }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .image-container {
+        width: 300px;
+      }
+      section img {
+        max-height: 400px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      header p { font-size: 1rem; }
+      section {
+        flex-direction: column !important;
+        padding: 2rem 1rem;
+        gap: 2rem;
+        align-items: center;
+      }
+      .image-container {
+        width: 100%;
+        max-width: 300px; /* Keep vertical orientation on mobile */
+        margin: 0 auto;
+      }
+      section img {
+        width: 100%;
+        max-height: 350px;
+      }
+      .header-links {
+        flex-direction: column;
+        align-items: center;
+      }
+      .header-links a {
+        width: 200px;
+        justify-content: center;
+      }
+      .section-text {
+        text-align: center;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .image-container {
+        min-width: unset;
+        max-width: 250px;
+      }
+      section img {
+        max-height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER FIXED -->
+  <header>
+    <h1>Kashaf Fatima</h1>
+    <p>AI/ML Engineer | Predictive Analytics & Intelligent Systems</p>
+    
+    <div class="contact-info">
+      <p>📍 Available for opportunities & collaborations</p>
+      <a href="mailto:kash.fatima7@gmail.com" class="email-link">
+        📧 kash.fatima7@gmail.com
+      </a>
+    </div>
+
+    <div class="header-links">
+      <!-- FIXED LinkedIn link - removed authwall redirect -->
+      <a href="https://www.linkedin.com/in/kashaf-fatima-jaffri67/" target="_blank" rel="noopener noreferrer">
+        🔗 LinkedIn
+      </a>
+      
+      <a href="#" id="githubBtn">
+        💻 GitHub
+      </a>
+      
+      <!-- FIXED Gmail link - direct mailto -->
+      <a href="mailto:kash.fatima7@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Kashaf,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect...">
+        ✉️ Email Me
+      </a>
+      
+      <a href="projects.html">
+        🚀 Projects
+      </a>
+    </div>
+  </header>
+
+  <!-- EXPERIENCE -->
+  <section class="fade-in">
+    <div class="image-container">
+      <img src="https://i.pinimg.com/736x/d3/db/ee/d3dbee5d2e2b2a40740bdb9f893ea6a2.jpg" alt="Experience">
+    </div>
+    <div class="section-text">
+      <h2>Professional Experience</h2>
+      <p>I am an AI/ML engineer specializing in predictive analytics, generative AI, and intelligent systems. I create solutions that transform complex data into actionable insights and tangible outcomes.</p>
+      <p><strong>Key Projects:</strong></p>
+      <ul>
+        <li>Developed platforms like Rapier and Proilot with ProForecast LTD</li>
+        <li>Created GPT-powered search engines and intelligent systems</li>
+        <li>Built frontend features for blockchain applications at Trust Nexus</li>
+        <li>Volunteered with UNDP on youth engagement and advocacy projects</li>
+      </ul>
+      <p>My work focuses on women's health, public policy, and creating real-world impact through technology.</p>
+    </div>
+  </section>
+
+  <!-- ACADEMIC JOURNEY -->
+  <section class="fade-in delay-1">
+    <div class="image-container">
+      <img src="https://i.pinimg.com/736x/0a/3f/86/0a3f860660939e405d9ca9a4ca4515de.jpg" alt="Academic Journey">
+    </div>
+    <div class="section-text">
+      <h2>Academic Journey & Specializations</h2>
+      <p>Pursuing BS in Computer Science (to be completed December 2026).</p>
+      <p><strong>Professional Specializations:</strong></p>
+      <ul>
+        <li>RAG & Agentic AI</li>
+        <li>Generative AI Engineering</li>
+        <li>LLM-Ops & Generative AI</li>
+        <li>Ethics in AI & AI Impact</li>
+        <li>Research Methods</li>
+      </ul>
+      <p>My interests include building AI-driven systems, data analytics, predictive modeling, and solutions with real-world impact.</p>
+    </div>
+  </section>
+
+  <!-- BOOK WRITING -->
+  <section class="fade-in delay-2">
+    <div class="image-container">
+      <img src="https://i.pinimg.com/1200x/73/25/68/7325685a40977e09312d0d5d423f0bd9.jpg" alt="Book Writing">
+    </div>
+    <div class="section-text">
+      <h2>Book Writing</h2>
+      <p><strong>Barzakh:</strong> A psychological thriller exploring schizophrenia, DID, and cults. The word "Barzakh" in Urdu refers to an intermediate state or barrier. This narrative blends real-life mental health challenges with a story that breaks the fourth wall.</p>
+      <p><strong>RIMEL:</strong> A geopolitical fantasy novel exploring Armageddon and international positioning in an alternate world. The title refers to "sand," symbolizing foundation, change, and fragility.</p>
+      <p>Both works explore complex themes through immersive storytelling and character development.</p>
+    </div>
+  </section>
+
+  <!-- ADVOCACY -->
+  <section class="fade-in delay-3">
+    <div class="image-container">
+      <img src="https://i.pinimg.com/1200x/54/69/c5/5469c574be032dd7e4966ab8fb44b526.jpg" alt="Advocacy">
+    </div>
+    <div class="section-text">
+      <h2>Public Speaking & Advocacy</h2>
+      <p><strong>Key Speaking Engagements:</strong></p>
+      <ul>
+        <li>Infant mortality and malnutrition awareness</li>
+        <li>Youth engagement strategies</li>
+        <li>World No Tobacco Day seminars</li>
+        <li>Women's health and empowerment advocacy</li>
+      </ul>
+      <p>Collaborated with organizations including UNDP on impactful initiatives that address real societal issues. My advocacy work focuses on creating sustainable change through awareness and policy engagement.</p>
+    </div>
+  </section>
+
+  <!-- GitHub Modal -->
+  <div class="github-modal" id="githubModal">
+    <div class="github-modal-content">
+      <h3>Choose a GitHub Profile</h3>
+      <p>Select which GitHub profile to view:</p>
+      <a href="https://github.com/kashaffatimajaffrey-design" target="_blank" rel="noopener noreferrer">
+        🎨 Kashaf Fatima Jaffrey Design
+      </a>
+      <a href="https://github.com/Kashaffatimaaa" target="_blank" rel="noopener noreferrer">
+        💻 Kashaf Fatima (Main)
+      </a>
+      <button id="closeModal">Close</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Let's Connect and Create Impact Together</p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/kashaf-fatima-jaffri67/" target="_blank" rel="noopener noreferrer">
+        LinkedIn
+      </a>
+      <a href="mailto:kash.fatima7@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Kashaf,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect...">
+        Email
+      </a>
+      <a href="#" id="githubBtnFooter">
+        GitHub
+      </a>
+    </div>
+    <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.9;">
+      © 2024 Kashaf Fatima. All rights reserved.
+    </p>
+  </footer>
+
+  <script>
+    // GitHub Modal
+    const githubBtn = document.getElementById('githubBtn');
+    const githubBtnFooter = document.getElementById('githubBtnFooter');
+    const githubModal = document.getElementById('githubModal');
+    const closeModal = document.getElementById('closeModal');
+
+    githubBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      githubModal.style.display = 'flex';
+    });
+    
+    githubBtnFooter.addEventListener('click', (e) => {
+      e.preventDefault();
+      githubModal.style.display = 'flex';
+    });
+    
+    closeModal.addEventListener('click', () => { 
+      githubModal.style.display = 'none'; 
+    });
+    
+    window.addEventListener('click', (e) => { 
+      if (e.target === githubModal) githubModal.style.display = 'none'; 
+    });
+
+    // Stagger animations
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('.fade-in');
+      sections.forEach((section, index) => {
+        section.style.animationDelay = `${index * 0.2}s`;
+      });
+    });
+  </script>
+
+</body>
+</html>
