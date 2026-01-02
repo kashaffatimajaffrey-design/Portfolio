@@ -14,54 +14,167 @@
       color: #1f2937;
     }
     a { text-decoration: none; color: inherit; }
-    img { width: 100%; height: auto; display: block; border-radius: 12px; }
+    img { width: 100%; height: auto; display: block; border-radius: 10px; }
     .container { max-width: 1200px; margin: auto; padding: 20px; }
     h1, h2 { text-align: center; color: #6366f1; }
-    .project-section { margin: 60px 0; }
+    h1 { font-size: 2rem; margin-bottom: 10px; }
+    h2 { font-size: 1.5rem; margin-bottom: 30px; }
+    .project-section { margin: 40px 0; }
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
+      gap: 25px;
     }
     .project-card {
-      background: #f3f4f6;
-      padding: 20px;
+      background: #f9fafb;
+      padding: 18px;
       border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       transition: transform 0.2s, box-shadow 0.2s;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
     }
     .project-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
     }
-    .project-image { max-height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 15px; }
-    .project-title { font-size: 1.4rem; font-weight: 600; margin-bottom: 10px; }
-    .project-desc { font-size: 1rem; line-height: 1.6; margin-bottom: 10px; }
-    .project-links a {
+    .project-image { 
+      height: 180px; 
+      overflow: hidden;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .project-title { 
+      font-size: 1.2rem; 
+      font-weight: 600; 
+      margin-bottom: 8px; 
+      color: #374151;
+    }
+    .project-desc { 
+      font-size: 0.9rem; 
+      line-height: 1.5; 
+      margin-bottom: 12px;
+      color: #4b5563;
+      flex-grow: 1;
+    }
+    
+    /* TECHNOLOGY TAGS - ADDED THIS SECTION */
+    .project-tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 10px 0 15px 0;
+    }
+    
+    .tech-tag {
       display: inline-block;
-      margin-right: 10px;
-      margin-top: 10px;
-      padding: 8px 15px;
-      background: #f9a8d4;
-      color: #fff;
-      border-radius: 8px;
-      transition: transform 0.2s;
+      padding: 4px 10px;
+      background: rgba(99, 102, 241, 0.1);
+      color: #6366f1;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      transition: all 0.2s ease;
     }
-    .project-links a:hover { transform: scale(1.05); }
+    
+    .tech-tag:hover {
+      background: rgba(99, 102, 241, 0.15);
+      transform: translateY(-1px);
+    }
+    
+    /* Different colors for different tech categories */
+    .tech-tag.ai { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; border-color: rgba(139, 92, 246, 0.2); }
+    .tech-tag.ml { background: rgba(239, 68, 68, 0.1); color: #ef4444; border-color: rgba(239, 68, 68, 0.2); }
+    .tech-tag.web { background: rgba(14, 165, 233, 0.1); color: #0ea5e9; border-color: rgba(14, 165, 233, 0.2); }
+    .tech-tag.data { background: rgba(34, 197, 94, 0.1); color: #22c55e; border-color: rgba(34, 197, 94, 0.2); }
+    .tech-tag.security { background: rgba(245, 158, 11, 0.1); color: #f59e0b; border-color: rgba(245, 158, 11, 0.2); }
+    .tech-tag.network { background: rgba(168, 85, 247, 0.1); color: #a855f7; border-color: rgba(168, 85, 247, 0.2); }
+    .tech-tag.system { background: rgba(6, 182, 212, 0.1); color: #06b6d4; border-color: rgba(6, 182, 212, 0.2); }
+    
+    /* HIGHLIGHTED DEMO LINKS */
+    .project-links {
+      margin-top: auto;
+    }
+    
+    .demo-link-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      color: white;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      margin-right: 8px;
+      margin-top: 8px;
+    }
+    
+    .demo-link-box:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+    }
+    
+    .github-link-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: rgba(99, 102, 241, 0.1);
+      color: #6366f1;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+      border: 2px solid rgba(99, 102, 241, 0.2);
+      margin-right: 8px;
+      margin-top: 8px;
+    }
+    
+    .github-link-box:hover {
+      background: rgba(99, 102, 241, 0.15);
+      transform: translateY(-2px);
+    }
 
     /* Tabs */
-    .tabs { text-align: center; margin-bottom: 40px; }
+    .tabs { 
+      text-align: center; 
+      margin-bottom: 30px; 
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
     .tab-btn {
       display: inline-block;
-      padding: 10px 25px;
-      margin: 0 5px;
+      padding: 8px 20px;
+      margin: 0 3px;
       border-radius: 8px;
       cursor: pointer;
       background: #e0e7ff;
       transition: background 0.2s;
       font-weight: 500;
+      font-size: 0.9rem;
     }
-    .tab-btn.active, .tab-btn:hover { background: #6366f1; color: #fff; }
+    .tab-btn.active, .tab-btn:hover { 
+      background: #6366f1; 
+      color: #fff; 
+    }
 
     .tab-content { display: none; }
     .tab-content.active { display: block; }
@@ -71,82 +184,141 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 40px;
-      padding: 0 20px;
+      margin-bottom: 30px;
+      padding: 20px;
+      background: linear-gradient(90deg, #f9fafb, #f3f4f6);
+      border-radius: 12px;
     }
     
     .go-back-btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 12px 25px;
+      gap: 6px;
+      padding: 10px 20px;
       background: linear-gradient(90deg, #fbb1f9, #caa6ff);
       color: #fff;
-      border-radius: 10px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
       transition: 0.3s;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-size: 0.9rem;
     }
     
     .go-back-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
     }
     
     /* Footer Go Back Button */
     .tab-footer {
       text-align: center;
-      margin: 60px 0 40px;
+      margin: 40px 0 30px;
     }
     
     .tab-footer-btn {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 12px 30px;
+      gap: 6px;
+      padding: 10px 25px;
       background: linear-gradient(90deg, #fbb1f9, #caa6ff);
       color: #fff;
-      border-radius: 10px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
       transition: 0.3s;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-size: 0.9rem;
     }
     
     .tab-footer-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
       background: linear-gradient(90deg, #ff8ae0, #caa6ff);
     }
 
     /* Animations */
-    .fade-in { opacity: 0; transform: translateY(20px); animation: fadeIn 1s forwards; }
-    @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
+    .fade-in { 
+      opacity: 0; 
+      transform: translateY(15px); 
+      animation: fadeIn 0.6s forwards; 
+    }
+    @keyframes fadeIn { 
+      to { 
+        opacity: 1; 
+        transform: translateY(0); 
+      } 
+    }
+
+    /* Video Container */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
 
     /* Responsive */
     @media (max-width: 768px) {
       .page-header {
         flex-direction: column;
         text-align: center;
-        gap: 20px;
+        gap: 15px;
       }
       
       .projects-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 20px;
       }
       
       .tabs {
-        display: flex;
         flex-direction: column;
-        gap: 10px;
         align-items: center;
       }
       
       .tab-btn {
         width: 200px;
+        margin-bottom: 5px;
+      }
+      
+      .project-image {
+        height: 160px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 15px;
+      }
+      
+      h1 {
+        font-size: 1.6rem;
+      }
+      
+      h2 {
+        font-size: 1.3rem;
+      }
+      
+      .project-image {
+        height: 140px;
+      }
+      
+      .demo-link-box, .github-link-box {
+        width: 100%;
+        justify-content: center;
+        margin-right: 0;
       }
     }
 
@@ -162,110 +334,351 @@
         ← Back to Portfolio
       </a>
       <h1>My Projects</h1>
-      <div style="width: 140px;"></div> <!-- Spacer for alignment -->
+      <div style="width: 140px;"></div>
     </div>
 
     <div class="tabs">
-      <span class="tab-btn active" onclick="showTab('completed')">Completed Projects</span>
+      <span class="tab-btn active" onclick="showTab('ai-demos')">AI Project Demos</span>
+      <span class="tab-btn" onclick="showTab('completed')">Completed Projects</span>
       <span class="tab-btn" onclick="showTab('ongoing')">Ongoing Projects</span>
     </div>
 
-    <!-- Completed Projects -->
-    <div id="completed" class="tab-content active project-section">
+    <!-- AI PROJECT DEMOS -->
+    <div id="ai-demos" class="tab-content active project-section">
       <div class="projects-grid">
-        <!-- NexaForge -->
+        
+        <!-- CalGemini Video Card -->
         <div class="project-card fade-in">
-          <img class="project-image" src="https://i.pinimg.com/1200x/86/8b/ed/868bedd4750e662f8268a0116dd17fc1.jpg" alt="NexaForge AI">
-          <div class="project-title">NexaForge AI</div>
+          <div class="video-container">
+            <iframe 
+              src="https://www.youtube.com/embed/SLsmgab1E3c"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="project-title">CalGemini AI Calorie Tracker</div>
+          
+          <!-- Tech Tags for CalGemini -->
+          <div class="project-tech-tags">
+            <span class="tech-tag ai">Google AI Studio</span>
+            <span class="tech-tag ai">Gemini AI</span>
+            <span class="tech-tag ai">RAG</span>
+            <span class="tech-tag web">React</span>
+            <span class="tech-tag web">TypeScript</span>
+            <span class="tech-tag data">Firebase</span>
+          </div>
+          
           <div class="project-desc">
-            NexaForge is a career ecosystem platform designed to provide AI-powered CV building, mock interviews, and skill assessment tools. It's aimed at helping candidates and recruiters efficiently connect and make informed decisions.
+            <strong>Built with Google AI Studio</strong><br>
+            AI-powered nutrition tracker using Gemini 1.5 Pro for food recognition and calorie estimation. Features multi-modal input (text/voice/image), daily goal tracking, and personalized insights.
           </div>
           <div class="project-links">
-            <a href="https://github.com/kashaffatimajaffrey-design/NexaForge-AI" target="_blank">GitHub</a>
+            <a href="https://youtu.be/SLsmgab1E3c" target="_blank" class="demo-link-box">
+              🎥 YouTube Demo
+            </a>
+            <a href="https://github.com/KashafFatimaJaffrey/CalGemini" target="_blank" class="github-link-box">
+              💻 GitHub
+            </a>
+          </div>
+        </div>
+        
+        <!-- CEREBRO Video Card -->
+        <div class="project-card fade-in">
+          <div class="video-container">
+            <iframe 
+              src="https://www.youtube.com/embed/j4T1OmaTml4"
+              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="project-title">CEREBRO AI Threat Intelligence</div>
+          
+          <!-- Tech Tags for CEREBRO -->
+          <div class="project-tech-tags">
+            <span class="tech-tag ai">Python</span>
+            <span class="tech-tag ai">NLP</span>
+            <span class="tech-tag security">Security AI</span>
+            <span class="tech-tag data">Vector DBs</span>
+            <span class="tech-tag ai">Real-time Analytics</span>
+            <span class="tech-tag data">Automated Dashboards</span>
+          </div>
+          
+          <div class="project-desc">
+            <strong>Production AI Security System</strong><br>
+            Real-time threat detection with multi-source monitoring, anomaly detection, and automated reporting. Built with Python, NLP, and Vector Databases.
+          </div>
+          <div class="project-links">
+            <a href="https://youtu.be/j4T1OmaTml4" target="_blank" class="demo-link-box">
+              🎥 YouTube Demo
+            </a>
+            <a href="https://github.com/KashafFatimaJaffrey/CEREBRO" target="_blank" class="github-link-box">
+              💻 GitHub
+            </a>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Go Back Button for AI Demos -->
+      <div class="tab-footer">
+        <a href="index.html" class="tab-footer-btn">
+          ← Back to Portfolio
+        </a>
+      </div>
+    </div>
+
+    <!-- COMPLETED PROJECTS -->
+    <div id="completed" class="tab-content project-section">
+      <div class="projects-grid">
+        <!-- CalGemini -->
+        <div class="project-card fade-in">
+          <div class="project-image">
+            <img src="https://i.pinimg.com/736x/58/f7/fa/58f7fa5b331cc84b17b8c8d36cb98d9b.jpg" alt="CalGemini AI Calorie Tracker">
+          </div>
+          <div class="project-title">CalGemini AI</div>
+          
+          <!-- Tech Tags for CalGemini -->
+          <div class="project-tech-tags">
+            <span class="tech-tag ai">Google AI Studio</span>
+            <span class="tech-tag ai">Gemini AI</span>
+            <span class="tech-tag ai">RAG System</span>
+            <span class="tech-tag web">React</span>
+            <span class="tech-tag web">TypeScript</span>
+            <span class="tech-tag data">Firebase</span>
+            <span class="tech-tag data">Nutrition API</span>
+          </div>
+          
+          <div class="project-desc">
+            <strong>AI-powered calorie tracker built with Google AI Studio.</strong> Processes food descriptions/images using Gemini AI for instant nutritional estimation.
+          </div>
+          <div class="project-links">
+            <a href="https://youtu.be/SLsmgab1E3c" target="_blank" class="demo-link-box">
+              🎥 YouTube Demo
+            </a>
+            <a href="https://github.com/KashafFatimaJaffrey/CalGemini" target="_blank" class="github-link-box">
+              💻 GitHub
+            </a>
           </div>
         </div>
 
-        <!-- Cerebro -->
+        <!-- CEREBRO -->
         <div class="project-card fade-in">
-          <img class="project-image" src="https://i.pinimg.com/1200x/4d/06/93/4d06935570311c0947d6b61b7c0fa167.jpg" alt="Cerebro">
+          <div class="project-image">
+            <img src="https://i.pinimg.com/1200x/4d/06/93/4d06935570311c0947d6b61b7c0fa167.jpg" alt="Cerebro">
+          </div>
           <div class="project-title">CEREBRO</div>
+          
+          <!-- Tech Tags for CEREBRO -->
+          <div class="project-tech-tags">
+            <span class="tech-tag ai">Python</span>
+            <span class="tech-tag ai">NLP</span>
+            <span class="tech-tag security">Cybersecurity</span>
+            <span class="tech-tag data">Vector Databases</span>
+            <span class="tech-tag security">Real-time Monitoring</span>
+            <span class="tech-tag data">Automated Reporting</span>
+          </div>
+          
           <div class="project-desc">
-            AI threat intelligence system integrating news credibility analysis, cybersecurity log monitoring, biometric authentication, and media forensics. Designed for real-time anomaly detection and actionable insights.
+            AI threat intelligence system integrating news credibility analysis, cybersecurity log monitoring, biometric authentication, and media forensics.
           </div>
           <div class="project-links">
-            <a href="https://github.com/kashaffatimajaffrey-design/Cerebro" target="_blank">GitHub</a>
+            <a href="https://youtu.be/j4T1OmaTml4" target="_blank" class="demo-link-box">
+              🎥 YouTube Demo
+            </a>
+            <a href="https://github.com/kashaffatimajaffrey-design/Cerebro" target="_blank" class="github-link-box">
+              💻 GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- NexaForge -->
+        <div class="project-card fade-in">
+          <div class="project-image">
+            <img src="https://i.pinimg.com/1200x/86/8b/ed/868bedd4750e662f8268a0116dd17fc1.jpg" alt="NexaForge AI">
+          </div>
+          <div class="project-title">NexaForge AI</div>
+          
+          <!-- Tech Tags for NexaForge -->
+          <div class="project-tech-tags">
+            <span class="tech-tag ai">LangChain</span>
+            <span class="tech-tag ai">GPT Models</span>
+            <span class="tech-tag web">React</span>
+            <span class="tech-tag web">TypeScript</span>
+            <span class="tech-tag ai">LLM Applications</span>
+            <span class="tech-tag data">Resume Parsing</span>
+          </div>
+          
+          <div class="project-desc">
+            NexaForge is a career ecosystem platform designed to provide AI-powered CV building, mock interviews, and skill assessment tools.
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/kashaffatimajaffrey-design/NexaForge-AI" target="_blank" class="github-link-box">
+              💻 GitHub
+            </a>
           </div>
         </div>
 
         <!-- EcoDrive Predictor -->
         <div class="project-card fade-in">
-          <img class="project-image" src="https://i.pinimg.com/736x/53/95/a8/5395a89ed3e033f38fbecfe29d03f7cc.jpg" alt="EcoDrive Predictor">
+          <div class="project-image">
+            <img src="https://i.pinimg.com/736x/53/95/a8/5395a89ed3e033f38fbecfe29d03f7cc.jpg" alt="EcoDrive Predictor">
+          </div>
           <div class="project-title">EcoDrive Predictor</div>
+          
+          <!-- Tech Tags for EcoDrive -->
+          <div class="project-tech-tags">
+            <span class="tech-tag ml">Machine Learning</span>
+            <span class="tech-tag ml">Regression Analysis</span>
+            <span class="tech-tag data">Python</span>
+            <span class="tech-tag data">Pandas</span>
+            <span class="tech-tag data">NumPy</span>
+            <span class="tech-tag data">Matplotlib</span>
+            <span class="tech-tag data">Scikit-learn</span>
+          </div>
+          
           <div class="project-desc">
             Full ML regression pipeline predicting vehicle CO emissions. Includes data cleaning, exploratory analysis, modeling, and visualization.
           </div>
           <div class="project-links">
-            <a href="https://github.com/Kashaffatimaaa" target="_blank">GitHub</a>
+            <a href="https://github.com/Kashaffatimaaa" target="_blank" class="github-link-box">
+              💻 GitHub
+            </a>
           </div>
         </div>
 
         <!-- Vehicle Emission ML Model -->
         <div class="project-card fade-in">
-          <img class="project-image" src="https://i.pinimg.com/1200x/e3/30/0e/e3300e421c6b718193276f3f760ee194.jpg" alt="Vehicle Emission Model">
+          <div class="project-image">
+            <img src="https://i.pinimg.com/1200x/e3/30/0e/e3300e421c6b718193276f3f760ee194.jpg" alt="Vehicle Emission Model">
+          </div>
           <div class="project-title">Vehicle Emission ML Model</div>
+          
+          <!-- Tech Tags for Vehicle Emission -->
+          <div class="project-tech-tags">
+            <span class="tech-tag ml">Linear Regression</span>
+            <span class="tech-tag ml">3D Visualization</span>
+            <span class="tech-tag data">Python</span>
+            <span class="tech-tag data">Matplotlib</span>
+            <span class="tech-tag ml">Predictive Analytics</span>
+            <span class="tech-tag data">Data Analysis</span>
+          </div>
+          
           <div class="project-desc">
             Multiple linear regression model with interactive 3D regression planes for predictive analytics of vehicle emissions.
           </div>
           <div class="project-links">
-            <a href="https://github.com/Kashaffatimaaa" target="_blank">GitHub</a>
+            <a href="https://github.com/Kashaffatimaaa" target="_blank" class="github-link-box">
+              💻 GitHub
+            </a>
           </div>
         </div>
 
         <!-- LinkedIn Clone -->
         <div class="project-card fade-in">
-          <img class="project-image" src="https://i.pinimg.com/736x/3a/08/9b/3a089bd3eb2fb7ef39ea69919c81bdf5.jpg" alt="LinkedIn Clone">
+          <div class="project-image">
+            <img src="https://i.pinimg.com/736x/3a/08/9b/3a089bd3eb2fb7ef39ea69919c81bdf5.jpg" alt="LinkedIn Clone">
+          </div>
           <div class="project-title">LinkedIn Clone</div>
+          
+          <!-- Tech Tags for LinkedIn Clone -->
+          <div class="project-tech-tags">
+            <span class="tech-tag web">MERN Stack</span>
+            <span class="tech-tag web">React</span>
+            <span class="tech-tag web">Node.js</span>
+            <span class="tech-tag data">MongoDB</span>
+            <span class="tech-tag web">Express.js</span>
+            <span class="tech-tag security">JWT Authentication</span>
+          </div>
+          
           <div class="project-desc">
             Full-stack social platform with authentication, messaging, post creation, and connections. Built with MERN stack.
           </div>
           <div class="project-links">
-            <a href="https://github.com/Kashaffatimaaa" target="_blank">GitHub</a>
+            <a href="https://github.com/Kashaffatimaaa" target="_blank" class="github-link-box">
+              💻 GitHub
+            </a>
           </div>
         </div>
 
         <!-- Internet Cafe Network -->
         <div class="project-card fade-in">
-          <img class="project-image" src="https://i.pinimg.com/736x/9e/fc/c4/9efcc43c99c7d7f9d483bd0d630f3104.jpg" alt="Internet Cafe Network">
+          <div class="project-image">
+            <img src="https://i.pinimg.com/736x/9e/fc/c4/9efcc43c99c7d7f9d483bd0d630f3104.jpg" alt="Internet Cafe Network">
+          </div>
           <div class="project-title">Internet Cafe Network</div>
+          
+          <!-- Tech Tags for Internet Cafe -->
+          <div class="project-tech-tags">
+            <span class="tech-tag network">Cisco Packet Tracer</span>
+            <span class="tech-tag network">VLAN Segmentation</span>
+            <span class="tech-tag network">Router Configuration</span>
+            <span class="tech-tag network">DHCP Setup</span>
+            <span class="tech-tag security">Network Security</span>
+            <span class="tech-tag network">Subnet Design</span>
+          </div>
+          
           <div class="project-desc">
             Network infrastructure design including VLAN segmentation, router configuration, DHCP setup, and security protocols.
           </div>
           <div class="project-links">
-            <a href="https://github.com/Kashaffatimaaa" target="_blank">GitHub</a>
+            <a href="https://github.com/Kashaffatimaaa" target="_blank" class="github-link-box">
+              💻 GitHub
+            </a>
           </div>
         </div>
 
         <!-- Wikipedia Clone -->
         <div class="project-card fade-in">
-          <img class="project-image" src="https://i.pinimg.com/1200x/05/2d/16/052d165e00505a70f2bd5539f70d53f1.jpg" alt="Wikipedia Clone">
+          <div class="project-image">
+            <img src="https://i.pinimg.com/1200x/05/2d/16/052d165e00505a70f2bd5539f70d53f1.jpg" alt="Wikipedia Clone">
+          </div>
           <div class="project-title">Wikipedia Clone</div>
+          
+          <!-- Tech Tags for Wikipedia Clone -->
+          <div class="project-tech-tags">
+            <span class="tech-tag web">HTML/CSS</span>
+            <span class="tech-tag web">JavaScript</span>
+            <span class="tech-tag web">Content Management</span>
+            <span class="tech-tag web">Search Functionality</span>
+            <span class="tech-tag web">Collaborative Editing</span>
+          </div>
+          
           <div class="project-desc">
             Collaborative knowledge platform with editing, search, and content management functionalities.
           </div>
           <div class="project-links">
-            <a href="https://github.com/Kashaffatimaaa" target="_blank">GitHub</a>
+            <a href="https://github.com/Kashaffatimaaa" target="_blank" class="github-link-box">
+              💻 GitHub
+            </a>
           </div>
         </div>
 
         <!-- Clinical Management System -->
         <div class="project-card fade-in">
-          <img class="project-image" src="https://i.pinimg.com/736x/f6/11/b4/f611b49cf5ce39367c3b5866e6c554ea.jpg" alt="Clinical Management">
+          <div class="project-image">
+            <img src="https://i.pinimg.com/736x/f6/11/b4/f611b49cf5ce39367c3b5866e6c554ea.jpg" alt="Clinical Management">
+          </div>
           <div class="project-title">Clinical Management System</div>
+          
+          <!-- Tech Tags for Clinical Management -->
+          <div class="project-tech-tags">
+            <span class="tech-tag system">C++</span>
+            <span class="tech-tag system">File Handling</span>
+            <span class="tech-tag system">Patient Management</span>
+            <span class="tech-tag system">Appointment Scheduling</span>
+            <span class="tech-tag security">Secure Login</span>
+            <span class="tech-tag system">Billing Automation</span>
+          </div>
+          
           <div class="project-desc">
             C++ system for patient management with appointment scheduling, secure login, billing automation, and structured file handling.
           </div>
           <div class="project-links">
-            <a href="https://github.com/Kashaffatimaaa" target="_blank">GitHub</a>
+            <a href="https://github.com/Kashaffatimaaa" target="_blank" class="github-link-box">
+              💻 GitHub
+            </a>
           </div>
         </div>
 
@@ -277,16 +690,27 @@
           ← Back to Portfolio
         </a>
       </div>
-
     </div>
 
-    <!-- Ongoing Projects -->
+    <!-- ONGOING PROJECTS -->
     <div id="ongoing" class="tab-content project-section">
       <div class="projects-grid">
         <!-- Apollo M -->
         <div class="project-card fade-in">
-          <img class="project-image" src="https://i.pinimg.com/1200x/b2/88/df/b288dfc6be70472f085554265a62752d.jpg" alt="Apollo M">
+          <div class="project-image">
+            <img src="https://i.pinimg.com/1200x/b2/88/df/b288dfc6be70472f085554265a62752d.jpg" alt="Apollo M">
+          </div>
           <div class="project-title">Apollo M</div>
+          
+          <!-- Tech Tags for Apollo M -->
+          <div class="project-tech-tags">
+            <span class="tech-tag ai">AI Ethics</span>
+            <span class="tech-tag data">Simulation</span>
+            <span class="tech-tag ai">Research</span>
+            <span class="tech-tag data">Behavioral Analysis</span>
+            <span class="tech-tag ai">Societal AI</span>
+          </div>
+          
           <div class="project-desc">
             Final year project exploring ethics, societal behavior, and Universe 25 inspired simulations. Focused on policy, decision-making, and AI insights.
           </div>
@@ -294,8 +718,20 @@
 
         <!-- EduCheck -->
         <div class="project-card fade-in">
-          <img class="project-image" src="https://i.pinimg.com/736x/64/67/6a/64676a2bd93217da25931ab35a087c67.jpg" alt="EduCheck">
+          <div class="project-image">
+            <img src="https://i.pinimg.com/736x/64/67/6a/64676a2bd93217da25931ab35a087c67.jpg" alt="EduCheck">
+          </div>
           <div class="project-title">EduCheck AI</div>
+          
+          <!-- Tech Tags for EduCheck -->
+          <div class="project-tech-tags">
+            <span class="tech-tag ai">AI Grading</span>
+            <span class="tech-tag ml">Natural Language Processing</span>
+            <span class="tech-tag data">Education Analytics</span>
+            <span class="tech-tag ai">Automated Assessment</span>
+            <span class="tech-tag data">Performance Analysis</span>
+          </div>
+          
           <div class="project-desc">
             AI-driven platform for education system auditing, automated exam paper checks, and performance analysis to improve grading accuracy.
           </div>
@@ -303,8 +739,20 @@
 
         <!-- Diabetes Digital Twin -->
         <div class="project-card fade-in">
-          <img class="project-image" src="https://i.pinimg.com/736x/85/f7/d1/85f7d1a3a599dd9ce29a9b4475825f47.jpg" alt="Diabetes Digital Twin">
+          <div class="project-image">
+            <img src="https://i.pinimg.com/736x/85/f7/d1/85f7d1a3a599dd9ce29a9b4475825f47.jpg" alt="Diabetes Digital Twin">
+          </div>
           <div class="project-title">Diabetes Digital Twin</div>
+          
+          <!-- Tech Tags for Diabetes Digital Twin -->
+          <div class="project-tech-tags">
+            <span class="tech-tag ml">Healthcare AI</span>
+            <span class="tech-tag ml">Predictive Models</span>
+            <span class="tech-tag ai">Digital Twin</span>
+            <span class="tech-tag data">Medical ML</span>
+            <span class="tech-tag ml">Disease Progression</span>
+          </div>
+          
           <div class="project-desc">
             Developing patient-specific predictive models for diabetes management, simulating disease progression and intervention outcomes.
           </div>
@@ -317,7 +765,6 @@
           ← Back to Portfolio
         </a>
       </div>
-
     </div>
   </div>
 
