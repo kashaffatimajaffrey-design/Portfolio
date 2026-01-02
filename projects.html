@@ -19,14 +19,73 @@
     h1, h2 { text-align: center; color: #6366f1; }
     h1 { font-size: 2rem; margin-bottom: 10px; }
     h2 { font-size: 1.5rem; margin-bottom: 30px; }
-    .project-section { margin: 40px 0; }
+    
+    /* SECTION STYLES */
+    .project-section {
+      margin: 60px 0 40px 0;
+      padding: 30px;
+      background: #f9fafb;
+      border-radius: 16px;
+      border-left: 5px solid #6366f1;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid rgba(99, 102, 241, 0.2);
+    }
+    
+    .section-number {
+      background: #6366f1;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    
+    .section-title {
+      flex: 1;
+    }
+    
+    .section-title h2 {
+      text-align: left;
+      margin: 0 0 5px 0;
+      font-size: 1.8rem;
+      color: #1f2937;
+    }
+    
+    .section-description {
+      color: #6b7280;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+    
+    .section-emoji {
+      font-size: 2rem;
+      margin-right: 10px;
+    }
+    
+    /* PROJECTS GRID */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
+      gap: 25px;
+      margin-top: 20px;
     }
+    
     .project-card {
-      background: #f9fafb;
+      background: white;
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
@@ -36,10 +95,12 @@
       flex-direction: column;
       border: 1px solid rgba(99, 102, 241, 0.1);
     }
+    
     .project-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     }
+    
     .project-image { 
       height: 180px; 
       overflow: hidden;
@@ -49,30 +110,21 @@
       align-items: center;
       justify-content: center;
     }
+    
     .project-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 10px;
     }
-    .project-title { 
-      font-size: 1.3rem; 
-      font-weight: 700; 
-      margin-bottom: 8px; 
-      color: #374151;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
     
-    /* PROJECT HEADER WITH EMOJI */
     .project-header {
       display: flex;
       align-items: center;
       gap: 10px;
       margin-bottom: 15px;
       padding-bottom: 10px;
-      border-bottom: 2px solid rgba(99, 102, 241, 0.2);
+      border-bottom: 2px solid rgba(99, 102, 241, 0.1);
     }
     
     .project-emoji {
@@ -103,7 +155,6 @@
       font-weight: 600;
     }
     
-    /* PROJECT DESCRIPTION - IMPROVED */
     .project-description {
       margin: 15px 0;
       line-height: 1.6;
@@ -120,7 +171,6 @@
       font-weight: 600;
     }
     
-    /* ARCHITECTURE HIGHLIGHTS */
     .architecture-highlights {
       background: rgba(99, 102, 241, 0.05);
       border-radius: 8px;
@@ -240,6 +290,7 @@
       flex-wrap: wrap;
       gap: 10px;
     }
+    
     .tab-btn {
       display: inline-block;
       padding: 10px 24px;
@@ -252,6 +303,7 @@
       font-size: 0.9rem;
       border: none;
     }
+    
     .tab-btn.active, .tab-btn:hover { 
       background: #6366f1; 
       color: #fff; 
@@ -324,6 +376,7 @@
       transform: translateY(15px); 
       animation: fadeIn 0.6s forwards; 
     }
+    
     @keyframes fadeIn { 
       to { 
         opacity: 1; 
@@ -377,6 +430,10 @@
       .project-image {
         height: 160px;
       }
+      
+      .project-section {
+        padding: 20px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -414,7 +471,7 @@
       <a href="index.html" class="go-back-btn">
         ← Back to Portfolio
       </a>
-      <h1>My AI/ML Projects</h1>
+      <h1>My Projects Portfolio</h1>
       <div style="width: 140px;"></div>
     </div>
 
@@ -542,413 +599,460 @@
       </div>
     </div>
 
-    <!-- COMPLETED PROJECTS -->
-    <div id="completed" class="tab-content project-section">
-      <h2>Completed Projects</h2>
-      <div class="projects-grid">
+    <!-- COMPLETED PROJECTS (ORGANIZED BY SECTION) -->
+    <div id="completed" class="tab-content">
+      
+      <!-- SECTION 1: Flagship AI Systems -->
+      <div class="project-section">
+        <div class="section-header">
+          <div class="section-number">1</div>
+          <div class="section-title">
+            <h2><span class="section-emoji">🚀</span> Flagship AI Systems & LLM Applications</h2>
+            <p class="section-description">
+              Production-oriented AI systems solving real-world problems using LLMs, multimodal models, and scalable architectures.
+            </p>
+          </div>
+        </div>
         
-        <!-- CalGemini -->
-        <div class="project-card fade-in">
-          <div class="project-image">
-            <img src="https://i.pinimg.com/736x/58/f7/fa/58f7fa5b331cc84b17b8c8d36cb98d9b.jpg" alt="CalGemini AI">
-          </div>
+        <div class="projects-grid">
           
-          <div class="project-header">
-            <div class="project-emoji">🔹</div>
-            <div class="project-name">
-              <h3>CalGemini AI</h3>
-              <p class="tagline">AI-powered nutrition tracker</p>
+          <!-- CalGemini -->
+          <div class="project-card fade-in">
+            <div class="project-image">
+              <img src="https://i.pinimg.com/736x/58/f7/fa/58f7fa5b331cc84b17b8c8d36cb98d9b.jpg" alt="CalGemini AI">
             </div>
-          </div>
-          
-          <div class="project-description">
-            <p><strong>Built with Google AI Studio & Gemini 1.5 Pro</strong> for multi-modal food analysis (text, voice, image). Implements RAG system for accurate calorie estimation and nutritional insights.</p>
             
-            <div class="architecture-highlights">
-              <h4>📊 Key Features</h4>
-              <ul>
-                <li>Multi-modal input processing (text/voice/image)</li>
-                <li>Daily goal tracking & progress visualization</li>
-                <li>Personalized meal suggestions based on dietary goals</li>
-                <li>Nutritional database with RAG implementation</li>
-              </ul>
+            <div class="project-header">
+              <div class="project-emoji">🔹</div>
+              <div class="project-name">
+                <h3>CalGemini AI</h3>
+                <p class="tagline">AI-powered nutrition tracker</p>
+              </div>
+            </div>
+            
+            <div class="project-description">
+              <p><strong>Built with Google AI Studio & Gemini 1.5 Pro</strong> for multi-modal food analysis. Implements RAG system for accurate calorie estimation and nutritional insights.</p>
+              
+              <div class="architecture-highlights">
+                <h4>📊 Key Features</h4>
+                <ul>
+                  <li>Multi-modal input (text/voice/image) processing</li>
+                  <li>RAG implementation with nutritional database</li>
+                  <li>Real-time goal tracking & visualization</li>
+                  <li>Personalized meal suggestions engine</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="project-tech-tags">
+              <span class="tech-tag ai">Google AI Studio</span>
+              <span class="tech-tag ai">Gemini 1.5 Pro</span>
+              <span class="tech-tag ai">RAG System</span>
+              <span class="tech-tag web">React</span>
+              <span class="tech-tag web">TypeScript</span>
+              <span class="tech-tag data">Firebase</span>
+            </div>
+            
+            <div class="project-links">
+              <a href="https://youtu.be/SLsmgab1E3c" target="_blank" class="demo-link-box">
+                🎥 Watch Demo
+              </a>
+              <a href="https://github.com/KashafFatimaJaffrey/CalGemini" target="_blank" class="github-link-box">
+                💻 View Code
+              </a>
+            </div>
+          </div>
+
+          <!-- CEREBRO -->
+          <div class="project-card fade-in">
+            <div class="project-image">
+              <img src="https://i.pinimg.com/1200x/4d/06/93/4d06935570311c0947d6b61b7c0fa167.jpg" alt="CEREBRO AI">
+            </div>
+            
+            <div class="project-header">
+              <div class="project-emoji">🔹</div>
+              <div class="project-name">
+                <h3>CEREBRO AI</h3>
+                <p class="tagline">Threat intelligence system</p>
+              </div>
+            </div>
+            
+            <div class="project-description">
+              <p><strong>Production AI security system</strong> with real-time threat detection, multi-source monitoring, and automated reporting. Built with scalable architecture.</p>
+              
+              <div class="architecture-highlights">
+                <h4>🛡️ Security Modules</h4>
+                <ul>
+                  <li>News credibility analysis & sentiment tracking</li>
+                  <li>Cybersecurity log monitoring & anomaly detection</li>
+                  <li>Biometric authentication integration</li>
+                  <li>Automated threat reporting dashboards</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="project-tech-tags">
+              <span class="tech-tag ai">Python</span>
+              <span class="tech-tag ai">NLP Processing</span>
+              <span class="tech-tag security">Cybersecurity</span>
+              <span class="tech-tag data">Vector Databases</span>
+              <span class="tech-tag security">Real-time Monitoring</span>
+              <span class="tech-tag data">Automated Reporting</span>
+            </div>
+            
+            <div class="project-links">
+              <a href="https://youtu.be/j4T1OmaTml4" target="_blank" class="demo-link-box">
+                🎥 Watch Demo
+              </a>
+              <a href="https://github.com/kashaffatimajaffrey-design/Cerebro" target="_blank" class="github-link-box">
+                💻 View Code
+              </a>
+            </div>
+          </div>
+
+          <!-- NexaForge AI -->
+          <div class="project-card fade-in">
+            <div class="project-image">
+              <img src="https://i.pinimg.com/1200x/86/8b/ed/868bedd4750e662f8268a0116dd17fc1.jpg" alt="NexaForge AI">
+            </div>
+            
+            <div class="project-header">
+              <div class="project-emoji">🔹</div>
+              <div class="project-name">
+                <h3>NexaForge AI</h3>
+                <p class="tagline">AI-powered career ecosystem</p>
+              </div>
+            </div>
+            
+            <div class="project-description">
+              <p><strong>Modular LLM-based platform</strong> automating resume parsing, CV generation, and mock interviews using LangChain orchestration and GPT models for contextual analysis.</p>
+              
+              <div class="architecture-highlights">
+                <h4>🎯 Career Tools</h4>
+                <ul>
+                  <li>Intelligent resume parsing & analysis</li>
+                  <li>Automated CV generation with ATS optimization</li>
+                  <li>Mock interview simulations with AI feedback</li>
+                  <li>Skill assessment & gap analysis</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="project-tech-tags">
+              <span class="tech-tag ai">LangChain</span>
+              <span class="tech-tag ai">GPT Models</span>
+              <span class="tech-tag web">React</span>
+              <span class="tech-tag web">TypeScript</span>
+              <span class="tech-tag ai">LLM Orchestration</span>
+              <span class="tech-tag data">Resume Parsing</span>
+            </div>
+            
+            <div class="project-links">
+              <a href="https://github.com/kashaffatimajaffrey-design/NexaForge-AI" target="_blank" class="github-link-box">
+                💻 View Code
+              </a>
             </div>
           </div>
           
-          <div class="project-tech-tags">
-            <span class="tech-tag ai">Google AI Studio</span>
-            <span class="tech-tag ai">Gemini 1.5 Pro</span>
-            <span class="tech-tag ai">RAG System</span>
-            <span class="tech-tag web">React</span>
-            <span class="tech-tag web">TypeScript</span>
-            <span class="tech-tag data">Firebase</span>
-          </div>
-          
-          <div class="project-links">
-            <a href="https://youtu.be/SLsmgab1E3c" target="_blank" class="demo-link-box">
-              🎥 Watch Demo
-            </a>
-            <a href="https://github.com/KashafFatimaJaffrey/CalGemini" target="_blank" class="github-link-box">
-              💻 View Code
-            </a>
+        </div>
+      </div>
+      
+      <!-- SECTION 2: ML & Predictive Modeling -->
+      <div class="project-section">
+        <div class="section-header">
+          <div class="section-number">2</div>
+          <div class="section-title">
+            <h2><span class="section-emoji">📊</span> Machine Learning & Predictive Modeling</h2>
+            <p class="section-description">
+              Applied machine learning projects focused on data analysis, prediction, and model interpretability.
+            </p>
           </div>
         </div>
-
-        <!-- CEREBRO -->
-        <div class="project-card fade-in">
-          <div class="project-image">
-            <img src="https://i.pinimg.com/1200x/4d/06/93/4d06935570311c0947d6b61b7c0fa167.jpg" alt="CEREBRO AI">
-          </div>
+        
+        <div class="projects-grid">
           
-          <div class="project-header">
-            <div class="project-emoji">🔹</div>
-            <div class="project-name">
-              <h3>CEREBRO AI</h3>
-              <p class="tagline">Threat intelligence system</p>
+          <!-- EcoDrive Predictor -->
+          <div class="project-card fade-in">
+            <div class="project-image">
+              <img src="https://i.pinimg.com/736x/53/95/a8/5395a89ed3e033f38fbecfe29d03f7cc.jpg" alt="EcoDrive Predictor">
             </div>
-          </div>
-          
-          <div class="project-description">
-            <p><strong>Production AI security system</strong> with real-time threat detection, multi-source monitoring, and automated reporting. Built with scalable architecture for enterprise deployment.</p>
             
-            <div class="architecture-highlights">
-              <h4>🛡️ Security Modules</h4>
-              <ul>
-                <li>News credibility analysis & sentiment tracking</li>
-                <li>Cybersecurity log monitoring</li>
-                <li>Biometric authentication system</li>
-                <li>Media forensics & automated reporting</li>
-              </ul>
+            <div class="project-header">
+              <div class="project-emoji">📊</div>
+              <div class="project-name">
+                <h3>EcoDrive Predictor</h3>
+                <p class="tagline">ML regression pipeline for emissions</p>
+              </div>
+            </div>
+            
+            <div class="project-description">
+              <p><strong>Full ML regression pipeline</strong> predicting vehicle CO emissions with data cleaning, exploratory analysis, modeling, and visualization for environmental impact assessment.</p>
+              
+              <div class="architecture-highlights">
+                <h4>📈 Analysis Pipeline</h4>
+                <ul>
+                  <li>Data preprocessing & feature engineering</li>
+                  <li>Multiple regression model comparison</li>
+                  <li>Feature importance analysis</li>
+                  <li>Interactive visualization dashboard</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="project-tech-tags">
+              <span class="tech-tag ml">Machine Learning</span>
+              <span class="tech-tag ml">Regression Analysis</span>
+              <span class="tech-tag data">Python</span>
+              <span class="tech-tag data">Pandas</span>
+              <span class="tech-tag data">NumPy</span>
+              <span class="tech-tag data">Matplotlib</span>
+              <span class="tech-tag data">Scikit-learn</span>
+            </div>
+            
+            <div class="project-links">
+              <a href="https://github.com/Kashaffatimaaa" target="_blank" class="github-link-box">
+                💻 View Code
+              </a>
+            </div>
+          </div>
+
+          <!-- Vehicle Emission ML Model -->
+          <div class="project-card fade-in">
+            <div class="project-image">
+              <img src="https://i.pinimg.com/1200x/e3/30/0e/e3300e421c6b718193276f3f760ee194.jpg" alt="Vehicle Emission Model">
+            </div>
+            
+            <div class="project-header">
+              <div class="project-emoji">📈</div>
+              <div class="project-name">
+                <h3>Vehicle Emission ML Model</h3>
+                <p class="tagline">3D regression visualization</p>
+              </div>
+            </div>
+            
+            <div class="project-description">
+              <p><strong>Advanced linear regression model</strong> with interactive 3D regression planes for predictive analytics of vehicle emissions. Focus on multi-dimensional visualization.</p>
+              
+              <div class="architecture-highlights">
+                <h4>🔬 Technical Approach</h4>
+                <ul>
+                  <li>Multiple linear regression implementation</li>
+                  <li>3D interactive visualization with Matplotlib</li>
+                  <li>Cross-validation & model evaluation</li>
+                  <li>Feature interaction analysis</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="project-tech-tags">
+              <span class="tech-tag ml">Linear Regression</span>
+              <span class="tech-tag ml">3D Visualization</span>
+              <span class="tech-tag data">Python</span>
+              <span class="tech-tag data">Matplotlib 3D</span>
+              <span class="tech-tag ml">Predictive Analytics</span>
+              <span class="tech-tag data">Statistical Analysis</span>
+            </div>
+            
+            <div class="project-links">
+              <a href="https://github.com/Kashaffatimaaa" target="_blank" class="github-link-box">
+                💻 View Code
+              </a>
             </div>
           </div>
           
-          <div class="project-tech-tags">
-            <span class="tech-tag ai">Python</span>
-            <span class="tech-tag ai">NLP Processing</span>
-            <span class="tech-tag security">Cybersecurity</span>
-            <span class="tech-tag data">Vector Databases</span>
-            <span class="tech-tag security">Real-time Monitoring</span>
-            <span class="tech-tag data">Automated Reporting</span>
-          </div>
-          
-          <div class="project-links">
-            <a href="https://youtu.be/j4T1OmaTml4" target="_blank" class="demo-link-box">
-              🎥 Watch Demo
-            </a>
-            <a href="https://github.com/kashaffatimajaffrey-design/Cerebro" target="_blank" class="github-link-box">
-              💻 View Code
-            </a>
+        </div>
+      </div>
+      
+      <!-- SECTION 3: Engineering Foundations -->
+      <div class="project-section">
+        <div class="section-header">
+          <div class="section-number">3</div>
+          <div class="section-title">
+            <h2><span class="section-emoji">🧱</span> Software, Systems & Engineering Foundations</h2>
+            <p class="section-description">
+              Foundational projects demonstrating software engineering, networking, and systems design skills.
+            </p>
           </div>
         </div>
-
-        <!-- NexaForge AI -->
-        <div class="project-card fade-in">
-          <div class="project-image">
-            <img src="https://i.pinimg.com/1200x/86/8b/ed/868bedd4750e662f8268a0116dd17fc1.jpg" alt="NexaForge AI">
-          </div>
+        
+        <div class="projects-grid">
           
-          <div class="project-header">
-            <div class="project-emoji">🔹</div>
-            <div class="project-name">
-              <h3>NexaForge AI</h3>
-              <p class="tagline">AI-powered career ecosystem</p>
+          <!-- LinkedIn Clone -->
+          <div class="project-card fade-in">
+            <div class="project-image">
+              <img src="https://i.pinimg.com/736x/3a/08/9b/3a089bd3eb2fb7ef39ea69919c81bdf5.jpg" alt="LinkedIn Clone">
             </div>
-          </div>
-          
-          <div class="project-description">
-            <p><strong>Modular LLM-based platform</strong> automating resume parsing, CV generation, and mock interviews. Designed using LangChain to orchestrate multi-step LLM workflows and GPT models for contextual resume analysis.</p>
             
-            <div class="architecture-highlights">
-              <h4>🎯 Career Tools</h4>
-              <ul>
-                <li>Intelligent resume parsing & analysis</li>
-                <li>Automated CV generation with ATS optimization</li>
-                <li>Mock interview simulations with AI feedback</li>
-                <li>Skill assessment & gap analysis</li>
-              </ul>
+            <div class="project-header">
+              <div class="project-emoji">🌐</div>
+              <div class="project-name">
+                <h3>LinkedIn Clone</h3>
+                <p class="tagline">Full-stack social platform</p>
+              </div>
             </div>
-          </div>
-          
-          <div class="project-tech-tags">
-            <span class="tech-tag ai">LangChain</span>
-            <span class="tech-tag ai">GPT Models</span>
-            <span class="tech-tag web">React</span>
-            <span class="tech-tag web">TypeScript</span>
-            <span class="tech-tag ai">LLM Applications</span>
-            <span class="tech-tag data">Resume Parsing</span>
-          </div>
-          
-          <div class="project-links">
-            <a href="https://github.com/kashaffatimajaffrey-design/NexaForge-AI" target="_blank" class="github-link-box">
-              💻 View Code
-            </a>
-          </div>
-        </div>
-
-        <!-- EcoDrive Predictor -->
-        <div class="project-card fade-in">
-          <div class="project-image">
-            <img src="https://i.pinimg.com/736x/53/95/a8/5395a89ed3e033f38fbecfe29d03f7cc.jpg" alt="EcoDrive Predictor">
-          </div>
-          
-          <div class="project-header">
-            <div class="project-emoji">📊</div>
-            <div class="project-name">
-              <h3>EcoDrive Predictor</h3>
-              <p class="tagline">ML regression pipeline for emissions</p>
-            </div>
-          </div>
-          
-          <div class="project-description">
-            <p><strong>Full ML regression pipeline</strong> predicting vehicle CO emissions with data cleaning, exploratory analysis, modeling, and visualization. Focused on interpretable models for environmental impact assessment.</p>
             
-            <div class="architecture-highlights">
-              <h4>📈 Analysis Pipeline</h4>
-              <ul>
-                <li>Data preprocessing & feature engineering</li>
-                <li>Multiple regression model comparison</li>
-                <li>Feature importance analysis</li>
-                <li>Interactive visualization dashboard</li>
-              </ul>
+            <div class="project-description">
+              <p><strong>Complete MERN stack application</strong> with authentication, real-time messaging, post creation, and professional networking features.</p>
+              
+              <div class="architecture-highlights">
+                <h4>⚙️ Core Features</h4>
+                <ul>
+                  <li>User authentication & authorization (JWT)</li>
+                  <li>Real-time messaging & notifications</li>
+                  <li>Post creation, liking, and commenting</li>
+                  <li>Professional profile management</li>
+                </ul>
+              </div>
             </div>
-          </div>
-          
-          <div class="project-tech-tags">
-            <span class="tech-tag ml">Machine Learning</span>
-            <span class="tech-tag ml">Regression Analysis</span>
-            <span class="tech-tag data">Python</span>
-            <span class="tech-tag data">Pandas</span>
-            <span class="tech-tag data">NumPy</span>
-            <span class="tech-tag data">Matplotlib</span>
-            <span class="tech-tag data">Scikit-learn</span>
-          </div>
-          
-          <div class="project-links">
-            <a href="https://github.com/Kashaffatimaaa" target="_blank" class="github-link-box">
-              💻 View Code
-            </a>
-          </div>
-        </div>
-
-        <!-- Vehicle Emission ML Model -->
-        <div class="project-card fade-in">
-          <div class="project-image">
-            <img src="https://i.pinimg.com/1200x/e3/30/0e/e3300e421c6b718193276f3f760ee194.jpg" alt="Vehicle Emission Model">
-          </div>
-          
-          <div class="project-header">
-            <div class="project-emoji">📈</div>
-            <div class="project-name">
-              <h3>Vehicle Emission ML Model</h3>
-              <p class="tagline">3D regression visualization</p>
-            </div>
-          </div>
-          
-          <div class="project-description">
-            <p><strong>Advanced linear regression model</strong> with interactive 3D regression planes for predictive analytics of vehicle emissions. Focus on multi-dimensional data visualization and model interpretation.</p>
             
-            <div class="architecture-highlights">
-              <h4>🔬 Technical Approach</h4>
-              <ul>
-                <li>Multiple linear regression implementation</li>
-                <li>3D interactive visualization with Matplotlib</li>
-                <li>Cross-validation & model evaluation</li>
-                <li>Feature interaction analysis</li>
-              </ul>
+            <div class="project-tech-tags">
+              <span class="tech-tag web">MERN Stack</span>
+              <span class="tech-tag web">React</span>
+              <span class="tech-tag web">Node.js</span>
+              <span class="tech-tag data">MongoDB</span>
+              <span class="tech-tag web">Express.js</span>
+              <span class="tech-tag security">JWT Authentication</span>
             </div>
-          </div>
-          
-          <div class="project-tech-tags">
-            <span class="tech-tag ml">Linear Regression</span>
-            <span class="tech-tag ml">3D Visualization</span>
-            <span class="tech-tag data">Python</span>
-            <span class="tech-tag data">Matplotlib 3D</span>
-            <span class="tech-tag ml">Predictive Analytics</span>
-            <span class="tech-tag data">Statistical Analysis</span>
-          </div>
-          
-          <div class="project-links">
-            <a href="https://github.com/Kashaffatimaaa" target="_blank" class="github-link-box">
-              💻 View Code
-            </a>
-          </div>
-        </div>
-
-        <!-- LinkedIn Clone -->
-        <div class="project-card fade-in">
-          <div class="project-image">
-            <img src="https://i.pinimg.com/736x/3a/08/9b/3a089bd3eb2fb7ef39ea69919c81bdf5.jpg" alt="LinkedIn Clone">
-          </div>
-          
-          <div class="project-header">
-            <div class="project-emoji">🌐</div>
-            <div class="project-name">
-              <h3>LinkedIn Clone</h3>
-              <p class="tagline">Full-stack social platform</p>
-            </div>
-          </div>
-          
-          <div class="project-description">
-            <p><strong>Complete MERN stack application</strong> with authentication, real-time messaging, post creation, and professional networking features. Built with scalability and user experience in mind.</p>
             
-            <div class="architecture-highlights">
-              <h4>⚙️ Core Features</h4>
-              <ul>
-                <li>User authentication & authorization (JWT)</li>
-                <li>Real-time messaging & notifications</li>
-                <li>Post creation, liking, and commenting</li>
-                <li>Professional profile management</li>
-              </ul>
+            <div class="project-links">
+              <a href="https://github.com/Kashaffatimaaa" target="_blank" class="github-link-box">
+                💻 View Code
+              </a>
             </div>
           </div>
-          
-          <div class="project-tech-tags">
-            <span class="tech-tag web">MERN Stack</span>
-            <span class="tech-tag web">React</span>
-            <span class="tech-tag web">Node.js</span>
-            <span class="tech-tag data">MongoDB</span>
-            <span class="tech-tag web">Express.js</span>
-            <span class="tech-tag security">JWT Authentication</span>
-          </div>
-          
-          <div class="project-links">
-            <a href="https://github.com/Kashaffatimaaa" target="_blank" class="github-link-box">
-              💻 View Code
-            </a>
-          </div>
-        </div>
 
-        <!-- Internet Cafe Network -->
-        <div class="project-card fade-in">
-          <div class="project-image">
-            <img src="https://i.pinimg.com/736x/9e/fc/c4/9efcc43c99c7d7f9d483bd0d630f3104.jpg" alt="Internet Cafe Network">
-          </div>
-          
-          <div class="project-header">
-            <div class="project-emoji">🔌</div>
-            <div class="project-name">
-              <h3>Internet Cafe Network</h3>
-              <p class="tagline">Enterprise network infrastructure</p>
+          <!-- Wikipedia Clone -->
+          <div class="project-card fade-in">
+            <div class="project-image">
+              <img src="https://i.pinimg.com/1200x/05/2d/16/052d165e00505a70f2bd5539f70d53f1.jpg" alt="Wikipedia Clone">
             </div>
-          </div>
-          
-          <div class="project-description">
-            <p><strong>Comprehensive network infrastructure design</strong> for enterprise environment with VLAN segmentation, router configuration, DHCP setup, and security protocols using Cisco Packet Tracer.</p>
             
-            <div class="architecture-highlights">
-              <h4>🌐 Network Design</h4>
-              <ul>
-                <li>VLAN segmentation for department isolation</li>
-                <li>Router configuration with OSPF routing</li>
-                <li>DHCP server setup & IP management</li>
-                <li>Security protocols & access control</li>
-              </ul>
+            <div class="project-header">
+              <div class="project-emoji">📚</div>
+              <div class="project-name">
+                <h3>Wikipedia Clone</h3>
+                <p class="tagline">Collaborative knowledge platform</p>
+              </div>
             </div>
-          </div>
-          
-          <div class="project-tech-tags">
-            <span class="tech-tag network">Cisco Packet Tracer</span>
-            <span class="tech-tag network">VLAN Segmentation</span>
-            <span class="tech-tag network">Router Configuration</span>
-            <span class="tech-tag network">DHCP Setup</span>
-            <span class="tech-tag security">Network Security</span>
-            <span class="tech-tag network">Subnet Design</span>
-          </div>
-          
-          <div class="project-links">
-            <a href="https://github.com/Kashaffatimaaa" target="_blank" class="github-link-box">
-              💻 View Code
-            </a>
-          </div>
-        </div>
-
-        <!-- Wikipedia Clone -->
-        <div class="project-card fade-in">
-          <div class="project-image">
-            <img src="https://i.pinimg.com/1200x/05/2d/16/052d165e00505a70f2bd5539f70d53f1.jpg" alt="Wikipedia Clone">
-          </div>
-          
-          <div class="project-header">
-            <div class="project-emoji">📚</div>
-            <div class="project-name">
-              <h3>Wikipedia Clone</h3>
-              <p class="tagline">Collaborative knowledge platform</p>
-            </div>
-          </div>
-          
-          <div class="project-description">
-            <p><strong>Collaborative knowledge platform</strong> with editing, search, and content management functionalities. Focus on user-friendly interface and efficient content retrieval system.</p>
             
-            <div class="architecture-highlights">
-              <h4>📝 Platform Features</h4>
-              <ul>
-                <li>Real-time collaborative editing</li>
-                <li>Advanced search functionality</li>
-                <li>Version control & edit history</li>
-                <li>Content categorization & tagging</li>
-              </ul>
+            <div class="project-description">
+              <p><strong>Collaborative knowledge platform</strong> with editing, search, and content management functionalities.</p>
+              
+              <div class="architecture-highlights">
+                <h4>📝 Platform Features</h4>
+                <ul>
+                  <li>Real-time collaborative editing</li>
+                  <li>Advanced search functionality</li>
+                  <li>Version control & edit history</li>
+                  <li>Content categorization & tagging</li>
+                </ul>
+              </div>
             </div>
-          </div>
-          
-          <div class="project-tech-tags">
-            <span class="tech-tag web">HTML/CSS</span>
-            <span class="tech-tag web">JavaScript</span>
-            <span class="tech-tag web">Content Management</span>
-            <span class="tech-tag web">Search Functionality</span>
-            <span class="tech-tag web">Collaborative Editing</span>
-          </div>
-          
-          <div class="project-links">
-            <a href="https://github.com/Kashaffatimaaa" target="_blank" class="github-link-box">
-              💻 View Code
-            </a>
-          </div>
-        </div>
-
-        <!-- Clinical Management System -->
-        <div class="project-card fade-in">
-          <div class="project-image">
-            <img src="https://i.pinimg.com/736x/f6/11/b4/f611b49cf5ce39367c3b5866e6c554ea.jpg" alt="Clinical Management">
-          </div>
-          
-          <div class="project-header">
-            <div class="project-emoji">🏥</div>
-            <div class="project-name">
-              <h3>Clinical Management System</h3>
-              <p class="tagline">Patient management software</p>
-            </div>
-          </div>
-          
-          <div class="project-description">
-            <p><strong>C++ patient management system</strong> with appointment scheduling, secure login, billing automation, and structured file handling. Focus on data integrity and system reliability.</p>
             
-            <div class="architecture-highlights">
-              <h4>⚕️ System Modules</h4>
-              <ul>
-                <li>Patient record management</li>
-                <li>Appointment scheduling system</li>
-                <li>Secure authentication system</li>
-                <li>Billing & invoice automation</li>
-              </ul>
+            <div class="project-tech-tags">
+              <span class="tech-tag web">HTML/CSS</span>
+              <span class="tech-tag web">JavaScript</span>
+              <span class="tech-tag web">Content Management</span>
+              <span class="tech-tag web">Search Functionality</span>
+              <span class="tech-tag web">Collaborative Editing</span>
+            </div>
+            
+            <div class="project-links">
+              <a href="https://github.com/Kashaffatimaaa" target="_blank" class="github-link-box">
+                💻 View Code
+              </a>
+            </div>
+          </div>
+
+          <!-- Clinical Management System -->
+          <div class="project-card fade-in">
+            <div class="project-image">
+              <img src="https://i.pinimg.com/736x/f6/11/b4/f611b49cf5ce39367c3b5866e6c554ea.jpg" alt="Clinical Management">
+            </div>
+            
+            <div class="project-header">
+              <div class="project-emoji">🏥</div>
+              <div class="project-name">
+                <h3>Clinical Management System</h3>
+                <p class="tagline">Patient management software</p>
+              </div>
+            </div>
+            
+            <div class="project-description">
+              <p><strong>C++ patient management system</strong> with appointment scheduling, secure login, billing automation, and structured file handling.</p>
+              
+              <div class="architecture-highlights">
+                <h4>⚕️ System Modules</h4>
+                <ul>
+                  <li>Patient record management</li>
+                  <li>Appointment scheduling system</li>
+                  <li>Secure authentication system</li>
+                  <li>Billing & invoice automation</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="project-tech-tags">
+              <span class="tech-tag system">C++</span>
+              <span class="tech-tag system">File Handling</span>
+              <span class="tech-tag system">Patient Management</span>
+              <span class="tech-tag system">Appointment Scheduling</span>
+              <span class="tech-tag security">Secure Login</span>
+              <span class="tech-tag system">Billing Automation</span>
+            </div>
+            
+            <div class="project-links">
+              <a href="https://github.com/Kashaffatimaaa" target="_blank" class="github-link-box">
+                💻 View Code
+              </a>
+            </div>
+          </div>
+
+          <!-- Internet Cafe Network -->
+          <div class="project-card fade-in">
+            <div class="project-image">
+              <img src="https://i.pinimg.com/736x/9e/fc/c4/9efcc43c99c7d7f9d483bd0d630f3104.jpg" alt="Internet Cafe Network">
+            </div>
+            
+            <div class="project-header">
+              <div class="project-emoji">🔌</div>
+              <div class="project-name">
+                <h3>Internet Cafe Network</h3>
+                <p class="tagline">Enterprise network infrastructure</p>
+              </div>
+            </div>
+            
+            <div class="project-description">
+              <p><strong>Comprehensive network infrastructure design</strong> with VLAN segmentation, router configuration, DHCP setup, and security protocols.</p>
+              
+              <div class="architecture-highlights">
+                <h4>🌐 Network Design</h4>
+                <ul>
+                  <li>VLAN segmentation for department isolation</li>
+                  <li>Router configuration with OSPF routing</li>
+                  <li>DHCP server setup & IP management</li>
+                  <li>Security protocols & access control</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="project-tech-tags">
+              <span class="tech-tag network">Cisco Packet Tracer</span>
+              <span class="tech-tag network">VLAN Segmentation</span>
+              <span class="tech-tag network">Router Configuration</span>
+              <span class="tech-tag network">DHCP Setup</span>
+              <span class="tech-tag security">Network Security</span>
+              <span class="tech-tag network">Subnet Design</span>
+            </div>
+            
+            <div class="project-links">
+              <a href="https://github.com/Kashaffatimaaa" target="_blank" class="github-link-box">
+                💻 View Code
+              </a>
             </div>
           </div>
           
-          <div class="project-tech-tags">
-            <span class="tech-tag system">C++</span>
-            <span class="tech-tag system">File Handling</span>
-            <span class="tech-tag system">Patient Management</span>
-            <span class="tech-tag system">Appointment Scheduling</span>
-            <span class="tech-tag security">Secure Login</span>
-            <span class="tech-tag system">Billing Automation</span>
-          </div>
-          
-          <div class="project-links">
-            <a href="https://github.com/Kashaffatimaaa" target="_blank" class="github-link-box">
-              💻 View Code
-            </a>
-          </div>
         </div>
-
       </div>
       
       <div class="tab-footer">
@@ -1014,7 +1118,7 @@
           </div>
           
           <div class="project-description">
-            <p><strong>AI-driven education platform</strong> for system auditing, automated exam paper checking, and performance analysis. Designed to improve grading accuracy and educational outcomes.</p>
+            <p><strong>AI-driven education platform</strong> for system auditing, automated exam paper checking, and performance analysis.</p>
             
             <div class="architecture-highlights">
               <h4>📚 Educational Tools</h4>
@@ -1051,7 +1155,7 @@
           </div>
           
           <div class="project-description">
-            <p><strong>Patient-specific predictive models</strong> for diabetes management, simulating disease progression and intervention outcomes. Focus on personalized healthcare and treatment optimization.</p>
+            <p><strong>Patient-specific predictive models</strong> for diabetes management, simulating disease progression and intervention outcomes.</p>
             
             <div class="architecture-highlights">
               <h4>⚕️ Healthcare Focus</h4>
