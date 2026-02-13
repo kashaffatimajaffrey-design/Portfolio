@@ -15,7 +15,7 @@
     }
     a { text-decoration: none; color: inherit; }
     .container { max-width: 1200px; margin: auto; padding: 20px; }
-    h1, h2 { text-align: center; color: #6366f1; }
+    h1, h2 { text-align: center; color: #4b0082; }
     h1 { font-size: 2rem; margin-bottom: 10px; }
     h2 { font-size: 1.5rem; margin-bottom: 30px; }
     
@@ -31,7 +31,7 @@
     .project-image img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* This prevents stretching */
+      object-fit: cover;
       border-radius: 10px;
       transition: transform 0.3s ease;
     }
@@ -40,13 +40,12 @@
       transform: scale(1.05);
     }
     
-    /* Rest of the CSS stays the same... */
     .project-section {
       margin: 40px 0 30px 0;
       padding: 25px;
       background: #f9fafb;
       border-radius: 16px;
-      border-left: 5px solid #6366f1;
+      border-left: 5px solid #4b0082;
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
     
@@ -57,24 +56,24 @@
       margin-bottom: 0;
       padding: 15px;
       cursor: pointer;
-      border-bottom: 2px solid rgba(99, 102, 241, 0.2);
-      background: rgba(99, 102, 241, 0.05);
+      border-bottom: 2px solid rgba(75, 0, 130, 0.2);
+      background: rgba(75, 0, 130, 0.05);
       border-radius: 12px;
       transition: all 0.3s ease;
     }
     
     .section-header:hover {
-      background: rgba(99, 102, 241, 0.08);
+      background: rgba(75, 0, 130, 0.08);
     }
     
     .section-header.active {
-      background: rgba(99, 102, 241, 0.1);
+      background: rgba(75, 0, 130, 0.1);
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
     }
     
     .section-number {
-      background: #6366f1;
+      background: #4b0082;
       color: white;
       width: 36px;
       height: 36px;
@@ -115,7 +114,7 @@
     
     .collapse-icon {
       font-size: 1.2rem;
-      color: #6366f1;
+      color: #4b0082;
       transition: transform 0.3s ease;
     }
     
@@ -154,7 +153,7 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      border: 1px solid rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(75, 0, 130, 0.1);
     }
     
     .project-card:hover {
@@ -168,12 +167,12 @@
       gap: 10px;
       margin-bottom: 12px;
       padding-bottom: 10px;
-      border-bottom: 2px solid rgba(99, 102, 241, 0.1);
+      border-bottom: 2px solid rgba(75, 0, 130, 0.1);
     }
     
     .project-emoji {
       font-size: 1.6rem;
-      background: rgba(99, 102, 241, 0.1);
+      background: rgba(75, 0, 130, 0.1);
       width: 40px;
       height: 40px;
       border-radius: 10px;
@@ -195,7 +194,7 @@
     .project-name .tagline {
       margin: 3px 0 0 0;
       font-size: 0.85rem;
-      color: #6366f1;
+      color: #4b0082;
       font-weight: 600;
     }
     
@@ -216,17 +215,17 @@
     }
     
     .architecture-highlights {
-      background: rgba(99, 102, 241, 0.05);
+      background: rgba(75, 0, 130, 0.05);
       border-radius: 8px;
       padding: 10px;
       margin: 12px 0;
-      border-left: 3px solid #6366f1;
+      border-left: 3px solid #4b0082;
     }
     
     .architecture-highlights h4 {
       margin: 0 0 6px 0;
       font-size: 0.85rem;
-      color: #6366f1;
+      color: #4b0082;
       display: flex;
       align-items: center;
       gap: 5px;
@@ -253,17 +252,17 @@
     .tech-tag {
       display: inline-block;
       padding: 4px 10px;
-      background: rgba(99, 102, 241, 0.1);
-      color: #6366f1;
+      background: rgba(75, 0, 130, 0.1);
+      color: #4b0082;
       border-radius: 20px;
       font-size: 0.75rem;
       font-weight: 600;
-      border: 1px solid rgba(99, 102, 241, 0.2);
+      border: 1px solid rgba(75, 0, 130, 0.2);
       transition: all 0.2s ease;
     }
     
     .tech-tag:hover {
-      background: rgba(99, 102, 241, 0.15);
+      background: rgba(75, 0, 130, 0.15);
       transform: translateY(-1px);
     }
     
@@ -285,20 +284,20 @@
       align-items: center;
       gap: 6px;
       padding: 6px 14px;
-      background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      background: linear-gradient(135deg, #4b0082 0%, #6a0dad 100%);
       color: white;
       border-radius: 8px;
       font-weight: 600;
       font-size: 0.8rem;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+      box-shadow: 0 4px 12px rgba(75, 0, 130, 0.2);
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
     
     .demo-link-box:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
-      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      box-shadow: 0 6px 16px rgba(75, 0, 130, 0.3);
+      background: linear-gradient(135deg, #5a0099 0%, #7b1fa0 100%);
     }
     
     .github-link-box {
@@ -306,17 +305,17 @@
       align-items: center;
       gap: 6px;
       padding: 6px 14px;
-      background: rgba(99, 102, 241, 0.1);
-      color: #6366f1;
+      background: rgba(75, 0, 130, 0.1);
+      color: #4b0082;
       border-radius: 8px;
       font-weight: 600;
       font-size: 0.8rem;
       transition: all 0.3s ease;
-      border: 1px solid rgba(99, 102, 241, 0.2);
+      border: 1px solid rgba(75, 0, 130, 0.2);
     }
     
     .github-link-box:hover {
-      background: rgba(99, 102, 241, 0.15);
+      background: rgba(75, 0, 130, 0.15);
       transform: translateY(-2px);
     }
 
@@ -340,10 +339,11 @@
       font-weight: 600;
       font-size: 0.85rem;
       border: none;
+      color: #1f2937;
     }
     
     .tab-btn.active, .tab-btn:hover { 
-      background: #6366f1; 
+      background: #4b0082; 
       color: #fff; 
     }
 
@@ -438,6 +438,19 @@
       border: 0;
     }
 
+    /* HealthGuard AI Special Badge */
+    .healthguard-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #00a86b, #2e8b57);
+      color: white;
+      font-size: 0.7rem;
+      padding: 2px 8px;
+      border-radius: 12px;
+      margin-left: 8px;
+      font-weight: 600;
+      vertical-align: middle;
+    }
+
     @media (max-width: 768px) {
       .page-header {
         flex-direction: column;
@@ -530,6 +543,66 @@
     <div id="ai-demos" class="tab-content active">
       <h2>AI Project Video Demos</h2>
       <div class="projects-grid">
+        
+        <!-- HealthGuard AI Video Card (UPDATED with GIF and expanded description) -->
+        <div class="project-card fade-in">
+          <div class="video-container">
+            <iframe 
+              src="https://www.youtube.com/embed/l8CTEOd3hBE"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          
+          <div class="project-header">
+            <div class="project-emoji">🏥</div>
+            <div class="project-name">
+              <h3>HealthGuard AI <span class="healthguard-badge">NEW</span></h3>
+              <p class="tagline">Complete Medical Chatbot with NO Token Limits</p>
+            </div>
+          </div>
+          
+          <div class="project-description">
+            <p><strong>Production-ready healthcare ecosystem</strong> powered by Google Gemini 2.5 Flash. Provides complete, empathetic medical responses with NO token limits — every response is full and never cut off.</p>
+            
+            <div class="architecture-highlights">
+              <h4>⚕️ Expanded Capabilities</h4>
+              <ul>
+                <li><strong>Voice‑enabled GPT‑style engine</strong> – describe symptoms naturally via speech; AI understands context and responds conversationally</li>
+                <li><strong>Full CRM integration</strong> – sync patient leads, appointments, and follow‑ups directly to staff dashboard</li>
+                <li><strong>Staff center & n8n workflows</strong> – automated triage, lead assignment, and internal notifications</li>
+                <li><strong>Retell.ai webhook & voice relay</strong> – connect to your phone system for AI‑powered inbound/outbound calls</li>
+                <li><strong>Complete mental health toolkit</strong> – grounding exercises, breathing guides, crisis detection</li>
+                <li><strong>Symptom checker + “when to see a doctor” indicators</strong></li>
+                <li><strong>Appointment scheduler & medication tracker</strong> with calendar sync</li>
+                <li><strong>Emergency escalation</strong> – detects critical phrases and immediately suggests hotlines / ER</li>
+                <li><strong>FastAPI backend with WebSockets</strong> for real‑time voice relay and live chat</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="project-tech-tags">
+            <span class="tech-tag ai">FastAPI</span>
+            <span class="tech-tag ai">Google Gemini 2.5 Flash</span>
+            <span class="tech-tag ai">Python</span>
+            <span class="tech-tag web">WebSockets</span>
+            <span class="tech-tag ai">Retell.ai</span>
+            <span class="tech-tag ai">n8n</span>
+            <span class="tech-tag data">CRM Sync</span>
+            <span class="tech-tag security">Healthcare AI</span>
+            <span class="tech-tag ai">Mental Health</span>
+            <span class="tech-tag web">Voice AI</span>
+          </div>
+          
+          <div class="project-links">
+            <a href="https://youtu.be/l8CTEOd3hBE" target="_blank" class="demo-link-box">
+              🎥 Watch Demo
+            </a>
+            <a href="https://github.com/kashaffatimajaffrey-design/HealthGuard-AI-Complete-Medical-Chatbot" target="_blank" class="github-link-box">
+              💻 View Code
+            </a>
+          </div>
+        </div>
         
         <!-- MarketPulseAI Video Card -->
         <div class="project-card fade-in">
@@ -696,7 +769,7 @@
     <!-- FEATURED PROJECTS -->
     <div id="completed" class="tab-content">
       
-      <!-- SECTION 1: Production AI Systems -->
+      <!-- SECTION 1: Production AI Systems (UPDATED WITH HEALTHGUARD NEW GIF + expanded desc) -->
       <div class="project-section">
         <div class="section-header" onclick="toggleSection(1)">
           <div class="section-number">1</div>
@@ -713,6 +786,62 @@
         
         <div class="section-content" id="section-content-1">
           <div class="projects-grid">
+            
+            <!-- HealthGuard AI Card (UPDATED image & description) -->
+            <div class="project-card fade-in">
+              <div class="project-image">
+                <img src="https://i.pinimg.com/originals/44/0f/fb/440ffbd5c0ffe14a296f7c99a5242ef0.gif" alt="HealthGuard AI">
+              </div>
+              
+              <div class="project-header">
+                <div class="project-emoji">🏥</div>
+                <div class="project-name">
+                  <h3>HealthGuard AI <span class="healthguard-badge">NEW</span></h3>
+                  <p class="tagline">Complete Medical Chatbot with NO Token Limits</p>
+                </div>
+              </div>
+              
+              <div class="project-description">
+                <p><strong>Production‑ready healthcare ecosystem</strong> powered by Google Gemini 2.5 Flash. Provides complete, empathetic medical responses with NO token limits — every response is full and never cut off.</p>
+                
+                <div class="architecture-highlights">
+                  <h4>⚕️ Expanded Capabilities</h4>
+                  <ul>
+                    <li><strong>Voice‑enabled GPT‑style engine</strong> – describe symptoms naturally via speech; AI understands context and responds conversationally</li>
+                    <li><strong>Full CRM integration</strong> – sync patient leads, appointments, and follow‑ups directly to staff dashboard</li>
+                    <li><strong>Staff center & n8n workflows</strong> – automated triage, lead assignment, and internal notifications</li>
+                    <li><strong>Retell.ai webhook & voice relay</strong> – connect to your phone system for AI‑powered inbound/outbound calls</li>
+                    <li><strong>Complete mental health toolkit</strong> – grounding exercises, breathing guides, crisis detection</li>
+                    <li><strong>Symptom checker + “when to see a doctor” indicators</strong></li>
+                    <li><strong>Appointment scheduler & medication tracker</strong> with calendar sync</li>
+                    <li><strong>Emergency escalation</strong> – detects critical phrases and immediately suggests hotlines / ER</li>
+                    <li><strong>FastAPI backend with WebSockets</strong> for real‑time voice relay and live chat</li>
+                  </ul>
+                </div>
+              </div>
+              
+              <div class="project-tech-tags">
+                <span class="tech-tag ai">FastAPI</span>
+                <span class="tech-tag ai">Google Gemini 2.5 Flash</span>
+                <span class="tech-tag ai">Python</span>
+                <span class="tech-tag web">WebSockets</span>
+                <span class="tech-tag ai">Retell.ai</span>
+                <span class="tech-tag ai">n8n</span>
+                <span class="tech-tag data">CRM Sync</span>
+                <span class="tech-tag security">Healthcare AI</span>
+                <span class="tech-tag ai">Mental Health</span>
+                <span class="tech-tag web">Voice AI</span>
+              </div>
+              
+              <div class="project-links">
+                <a href="https://youtu.be/l8CTEOd3hBE" target="_blank" class="demo-link-box">
+                  🎥 Watch Demo
+                </a>
+                <a href="https://github.com/kashaffatimajaffrey-design/HealthGuard-AI-Complete-Medical-Chatbot" target="_blank" class="github-link-box">
+                  💻 View Code
+                </a>
+              </div>
+            </div>
             
             <!-- MarketPulseAI -->
             <div class="project-card fade-in">
@@ -987,7 +1116,7 @@
         <div class="section-content" id="section-content-3">
           <div class="projects-grid">
             
-            <!-- LinkedIn Clone (UPDATED IMAGE) -->
+            <!-- LinkedIn Clone -->
             <div class="project-card fade-in">
               <div class="project-image">
                 <img src="https://cdn.dribbble.com/userupload/18226718/file/original-d22b73e504baea073a1534e9b2b5e296.png?crop=123x0-1003x660&format=webp&resize=400x300&vertical=center" alt="LinkedIn Clone">
@@ -1191,8 +1320,10 @@
     }
     
     document.addEventListener('DOMContentLoaded', function() {
+      // Open first section by default
       toggleSection(1);
       
+      // Stagger animations
       const projectCards = document.querySelectorAll('.project-card');
       projectCards.forEach((card, index) => {
         card.style.animationDelay = `${index * 0.1}s`;
@@ -1202,5 +1333,6 @@
 
 </body>
 </html>
+
 
 
