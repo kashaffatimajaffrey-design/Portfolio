@@ -36,13 +36,14 @@
 
     a { text-decoration: none; color: inherit; }
 
-    /* ─── SIGNAL CANVAS ─── */
+    /* ─── SIGNAL CANVAS (now a fixed, page-wide background layer) ─── */
     #signal-canvas {
-      position: absolute;
+      position: fixed;
       top: 0; left: 0;
-      width: 100%; height: 100%;
-      opacity: 0.18;
+      width: 100vw; height: 100vh;
+      opacity: 0.14;
       pointer-events: none;
+      z-index: -1;
     }
 
     /* ─── NAV ─── */
@@ -315,7 +316,8 @@
 
     /* ─── STARTUP HERO ─── */
     .startup-hero {
-      background: var(--bg2);
+      background: rgba(14, 18, 32, 0.82);
+      backdrop-filter: blur(6px);
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 3rem;
@@ -400,7 +402,7 @@
       gap: 0.8rem;
       align-items: flex-start;
       padding: 1rem;
-      background: var(--bg3);
+      background: rgba(20, 24, 38, 0.7);
       border-radius: var(--radius);
       border: 1px solid var(--border);
     }
@@ -442,7 +444,8 @@
     }
 
     .project-card {
-      background: var(--bg2);
+      background: rgba(14, 18, 32, 0.82);
+      backdrop-filter: blur(6px);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 1.8rem;
@@ -465,7 +468,7 @@
 
     .project-card:hover {
       transform: translateY(-4px);
-      background: var(--bg3);
+      background: rgba(20, 24, 38, 0.88);
     }
 
     .project-card:hover::after {
@@ -482,6 +485,22 @@
       top: 0; left: 0; right: 0;
       height: 2px;
       background: linear-gradient(90deg, var(--amber), transparent);
+    }
+
+    /* ─── LAB CARD (experimental / not-yet-shipped work) ─── */
+    .project-card.lab {
+      border: 1px dashed rgba(91,141,239,0.35);
+      background: rgba(14, 18, 32, 0.55);
+    }
+
+    .project-card.lab::before { display: none; }
+
+    .project-card.lab:hover {
+      border-color: rgba(91,141,239,0.6);
+    }
+
+    .project-card.lab:hover::after {
+      border-color: transparent;
     }
 
     .project-tag {
@@ -529,7 +548,7 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.68rem;
       padding: 0.2rem 0.6rem;
-      background: var(--bg3);
+      background: rgba(20, 24, 38, 0.7);
       border: 1px solid var(--border);
       border-radius: 4px;
       color: var(--text3);
@@ -568,6 +587,16 @@
 
     .link-btn.primary:hover {
       background: rgba(232,168,56,0.2);
+    }
+
+    /* ─── LAB SECTION INTRO ─── */
+    .lab-intro {
+      font-size: 0.9rem;
+      color: var(--text2);
+      max-width: 680px;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      margin-top: -2rem;
     }
 
     /* ─── EXPERIENCE ─── */
@@ -674,6 +703,55 @@
       flex-shrink: 0;
     }
 
+    /* ─── CERTIFICATIONS ─── */
+    .cert-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .cert-item {
+      display: grid;
+      grid-template-columns: 140px 1fr auto;
+      gap: 1rem;
+      align-items: baseline;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .cert-issuer {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--amber);
+      letter-spacing: 0.04em;
+    }
+
+    .cert-name {
+      font-size: 0.88rem;
+      color: var(--text1);
+      font-weight: 500;
+    }
+
+    .cert-date {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--text3);
+      white-space: nowrap;
+    }
+
+    .cert-note {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--text2);
+    }
+
+    .cert-note a { color: var(--amber); }
+
+    @media (max-width: 640px) {
+      .cert-item { grid-template-columns: 1fr; gap: 0.2rem; }
+      .cert-date { order: -1; }
+    }
+
     /* ─── BEYOND CODE ─── */
     details {
       border: 1px solid var(--border);
@@ -688,7 +766,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: var(--bg2);
+      background: rgba(14, 18, 32, 0.82);
       font-family: 'Space Grotesk', sans-serif;
       font-weight: 600;
       font-size: 0.95rem;
@@ -698,7 +776,7 @@
       transition: background 0.2s;
     }
 
-    summary:hover { background: var(--bg3); }
+    summary:hover { background: rgba(20, 24, 38, 0.88); }
 
     summary::after {
       content: '+';
@@ -715,6 +793,7 @@
       font-size: 0.88rem;
       color: var(--text2);
       line-height: 1.7;
+      background: rgba(8, 11, 18, 0.6);
     }
 
     .details-body p { margin-bottom: 0.8rem; }
@@ -723,7 +802,7 @@
 
     /* ─── CONTACT ─── */
     .contact-strip {
-      background: var(--bg2);
+      background: rgba(14, 18, 32, 0.85);
       border-top: 1px solid var(--border);
       padding: 5rem 2.5rem;
       text-align: center;
@@ -809,12 +888,15 @@
 </head>
 <body>
 
+  <canvas id="signal-canvas"></canvas>
+
   <!-- NAV -->
   <nav>
     <div class="nav-logo">kf<span>.</span></div>
     <ul class="nav-links">
       <li><a href="#startup">Startup</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#lab">Lab</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="projects.html">All Projects →</a></li>
@@ -824,7 +906,6 @@
 
   <!-- HERO -->
   <section class="hero">
-    <canvas id="signal-canvas"></canvas>
     <div class="hero-inner">
       <div class="hero-eyebrow">AI/ML Engineer · Founder · BCI Researcher</div>
 
@@ -992,7 +1073,6 @@
         </div>
         <div class="project-links">
           <a href="https://github.com/kashaffatimajaffrey-design/ta-crypto-wallet" target="_blank" class="link-btn primary">⌥ GitHub</a>
-          <a href="https://www.npmjs.com/package/ta-crypto" target="_blank" class="link-btn">↗ npm</a>
         </div>
       </div>
 
@@ -1088,6 +1168,45 @@
 
   <hr class="divider">
 
+  <!-- LAB / EXPERIMENTAL -->
+  <div class="section" id="lab">
+    <div class="section-label">In the Lab</div>
+    <div class="section-title">What I'm building next</div>
+    <p class="lab-intro">
+      Early-stage, unfinished, and built in the open. Nothing here is a finished product yet —
+      this is where Occuris AI's next layer of internal tooling is taking shape.
+    </p>
+
+    <div class="projects-grid">
+
+      <!-- Occuralog -->
+      <div class="project-card lab fade-up">
+        <span class="project-tag steel">Experimental · Internal Tooling</span>
+        <div class="project-title">Occuralog</div>
+        <p class="project-desc">
+          The first real test bed for a language I'm designing as internal tooling for Occuris AI,
+          before it's anything more ambitious. Right now: a parser that turns raw WhatsApp group
+          exports from manufacturing and industrial-ops chats into structured, classifiable events —
+          rule-based classification on a hand-labeled Roman Urdu/English dataset (~150 messages,
+          ~68% accuracy), with an LLM fallback for the unclassified cases as the next milestone.
+          Small, scrappy, and the seed of something larger.
+        </p>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">Rule-based NLP</span>
+          <span class="stack-tag">LLM Fallback (planned)</span>
+          <span class="stack-tag">Occuris AI</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/kashaffatimajaffrey-design/occuralog" target="_blank" class="link-btn primary">⌥ GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
   <!-- EXPERIENCE -->
   <div class="section" id="experience">
     <div class="section-label">Experience</div>
@@ -1133,7 +1252,7 @@
           <ul class="exp-bullets">
             <li>BCI research focusing on ML/NLP applications in brain-computer interfaces</li>
             <li>Co-authoring IEEE Standards Association telehealth AI paper</li>
-            <li>Competing in Kaggle Deep Past Challenge — Akkadian cuneiform neural translation</li>
+            <li>Participated in Kaggle's Deep Past Challenge — Akkadian cuneiform neural translation</li>
           </ul>
         </div>
       </div>
@@ -1186,14 +1305,91 @@
         <div class="skill-group-title">Languages</div>
         <div class="skill-items">
           <div class="skill-item">English (fluent)</div>
-          <div class="skill-item">Mandarin (96/100)</div>
+          <div class="skill-item">Learning: Mandarin</div>
+          <div class="skill-item">Learning: Arabic</div>
           <div class="skill-item">Korean (conversational)</div>
-          <div class="skill-item">Japanese (conversational)</div>
-          <div class="skill-item">Urdu · Punjabi (native)</div>
-          <div class="skill-item">Spanish (developing)</div>
+          <div class="skill-item">Urdu · Punjabi · Hindi (local)</div>
         </div>
       </div>
     </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- CERTIFICATIONS -->
+  <div class="section" id="certifications">
+    <div class="section-label">Certifications</div>
+    <div class="section-title">Continuous learning</div>
+
+    <div class="cert-list fade-up">
+
+      <div class="cert-item">
+        <div class="cert-issuer">IBM</div>
+        <div class="cert-name">Agentic AI with LangGraph, CrewAI, AutoGen and BeeAI</div>
+        <div class="cert-date">Dec 2025</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-issuer">IBM</div>
+        <div class="cert-name">Agentic AI with LangChain and LangGraph</div>
+        <div class="cert-date">Dec 2025</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-issuer">IBM</div>
+        <div class="cert-name">Generative AI Language Modeling with Transformers</div>
+        <div class="cert-date">Dec 2025</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-issuer">IBM</div>
+        <div class="cert-name">Advanced RAG with Vector Databases and Retrievers</div>
+        <div class="cert-date">Nov 2025</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-issuer">IBM</div>
+        <div class="cert-name">Fundamentals of Building AI Agents</div>
+        <div class="cert-date">Nov 2025</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-issuer">Duke University</div>
+        <div class="cert-name">Open Source LLMOps Solutions</div>
+        <div class="cert-date">Nov 2025</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-issuer">Duke University</div>
+        <div class="cert-name">GenAI and LLMs on AWS</div>
+        <div class="cert-date">Nov 2025</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-issuer">Duke University</div>
+        <div class="cert-name">Advanced Data Engineering</div>
+        <div class="cert-date">Nov 2025</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-issuer">University of Michigan</div>
+        <div class="cert-name">Generative AI: Impact on Business and Society</div>
+        <div class="cert-date">Aug 2025</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-issuer">SOAS, University of London</div>
+        <div class="cert-name">Understanding Research Methods</div>
+        <div class="cert-date">Jul 2025</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-issuer">Forage (Tata)</div>
+        <div class="cert-name">GenAI Powered Data Analytics Job Simulation</div>
+        <div class="cert-date">Jan 2026</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-issuer">Forage (AWS)</div>
+        <div class="cert-name">Solutions Architecture Job Simulation</div>
+        <div class="cert-date">Jan 2026</div>
+      </div>
+
+    </div>
+
+    <p class="cert-note">
+      12 of 20+ shown — selected for relevance to agentic AI, RAG, and LLMOps. Full history is on the
+      <a href="https://www.linkedin.com/in/kashaf-fatima-jaffri67/" target="_blank">Licenses & Certifications section on LinkedIn</a>.
+    </p>
   </div>
 
   <hr class="divider">
@@ -1204,10 +1400,16 @@
     <div class="section-title" style="margin-bottom: 1.5rem;">Other things I do</div>
 
     <details>
-      <summary>📖 Writing — Barzakh & RIMEL</summary>
+      <summary>📖 Writing — Barzakh</summary>
       <div class="details-body">
-        <p><strong>Barzakh</strong> — psychological thriller exploring schizophrenia, DID, and cult mechanics. Unreliable narrator, dissociative elements, open ending. Tonal references: House of Leaves, Gone Girl, Fight Club. "Barzakh" in Urdu means the liminal space between worlds.</p>
-        <p><strong>RIMEL</strong> — geopolitical fantasy set against Armageddon. "Rimel" means sand — the shifting foundation upon which nations build their destinies. Examines how cultures position themselves during global crisis.</p>
+        <p>The story ends where it begins. Somewhere in between, the narrator stops being someone
+        you can trust — and you won't be sure exactly when that happened. <strong>Barzakh</strong> is
+        a slow unraveling told by someone whose grip on what's real is already gone, written for
+        readers of Gone Girl, Fight Club, and House of Leaves.</p>
+        <p>Looping structure, scenes that repeat with small, deliberate shifts, moments that break
+        the fourth wall, and a cult portrayed not through spectacle but through how such groups
+        actually operate — preying on people who are already struggling. Almost two years and
+        counting, with as many revision passes as it takes to get it right.</p>
       </div>
     </details>
 
@@ -1215,14 +1417,14 @@
       <summary>🎙 Public Speaking & Advocacy</summary>
       <div class="details-body">
         <p><strong>Government of Sindh recognition</strong> — selected as youth speaker for Youth Engagement Dialogue on Tobacco Control, contributing to policy discussions reaching 500+ young participants.</p>
-        <p>Worked with <strong>UNDP</strong> remotely on community initiatives. Spoke on infant mortality, women's health empowerment, and World No Tobacco Day campaigns. Developed skills in policy engagement and cross-sector collaboration with government bodies and international organizations.</p>
+        <p>Spoke on infant mortality, women's health empowerment, and World No Tobacco Day campaigns. Developed skills in policy engagement and cross-sector collaboration with government bodies.</p>
       </div>
     </details>
 
     <details>
       <summary>🌏 Languages & Interests</summary>
       <div class="details-body">
-        <p>Mandarin fluency (96/100) — a differentiator for CPEC-adjacent work. Korean interpreter experience. Competing in Kaggle's Deep Past Challenge translating 4,000-year-old Akkadian cuneiform to English.</p>
+        <p>Currently learning Mandarin and Arabic, with conversational Korean. Participated in Kaggle's Deep Past Challenge translating 4,000-year-old Akkadian cuneiform to English.</p>
         <p>Music: Pakistani classical, K-pop (OT4 Big Bang), metal, Michael Jackson, indie, J-pop. Wide-ranging cultural interests — independently studied Gramsci, cultural hegemony, and epistemic violence.</p>
       </div>
     </details>
@@ -1251,14 +1453,14 @@
   </footer>
 
   <script>
-    // BCI-style signal animation in hero
+    // BCI-style signal animation — now a fixed full-page background layer
     const canvas = document.getElementById('signal-canvas');
     const ctx = canvas.getContext('2d');
     let t = 0;
 
     function resize() {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     }
     resize();
     window.addEventListener('resize', resize);
@@ -1266,7 +1468,7 @@
     function drawSignal() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const w = canvas.width, h = canvas.height;
-      const cy = h * 0.62;
+      const cy = h * 0.5;
 
       ctx.beginPath();
       ctx.strokeStyle = '#E8A838';
