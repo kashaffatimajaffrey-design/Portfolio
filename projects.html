@@ -367,6 +367,7 @@
   <div class="filter-bar">
     <button class="filter-btn active" onclick="filter('all',this)">All</button>
     <button class="filter-btn" onclick="filter('flagship',this)">Flagship</button>
+    <button class="filter-btn" onclick="filter('frontend',this)">Frontend</button>
     <button class="filter-btn" onclick="filter('ai',this)">AI · Agents</button>
     <button class="filter-btn" onclick="filter('demo',this)">Has Demo</button>
     <button class="filter-btn" onclick="filter('ml',this)">ML · Data</button>
@@ -379,8 +380,64 @@
     <div class="section-label">Flagship</div>
     <div class="projects-grid">
 
+      <!-- APOLLO-M -->
+      <div class="project-card featured fade-up" data-cat="flagship frontend fullstack">
+        <div class="card-top">
+          <span class="card-tag steel">Next.js 16 &middot; React 19 &middot; Supabase</span>
+        </div>
+        <div class="card-title">APOLLO-M</div>
+        <div class="card-tagline">Three surfaces, one Postgres, server-rendered</div>
+        <p class="card-desc">
+          Community-instability forecasting: a PyTorch pipeline feeding a Next.js web app, a
+          Streamlit analyst dashboard and a FastAPI service &mdash; all reading the same rows, so
+          none of them can disagree with another.
+        </p>
+        <ul class="card-highlights">
+          <li><strong>React Server Components</strong> &mdash; partial prerendering via Cache Components, 4&nbsp;ms warm first byte</li>
+          <li><strong>Auth as Server Actions</strong> &mdash; sign-in works with JavaScript disabled, enforced by a Playwright test</li>
+          <li><strong>RLS as the boundary</strong> &mdash; verified by attacking it: anon reads return empty, writes refused at the database</li>
+          <li><strong>A negative result, published</strong> &mdash; the headline metric scored below one of its own inputs, confirmed in a second model</li>
+        </ul>
+        <div class="card-stack">
+          <span class="stack-tag">Next.js 16</span><span class="stack-tag">React 19</span>
+          <span class="stack-tag">TypeScript</span><span class="stack-tag">Supabase</span>
+          <span class="stack-tag">Playwright</span><span class="stack-tag">PyTorch</span>
+        </div>
+        <div class="card-links">
+          <a href="https://apollo-m.vercel.app" target="_blank" class="link-btn primary">&#8599; Live</a>
+          <a href="https://github.com/kashaffatimajaffrey-design/apollo-m" target="_blank" class="link-btn">&#8997; GitHub</a>
+        </div>
+      </div>
+
+      <!-- supavisor #1051 -->
+      <div class="project-card featured fade-up" data-cat="flagship fullstack">
+        <div class="card-top">
+          <span class="card-tag amber">Open Source &middot; Supabase</span>
+        </div>
+        <div class="card-title">supabase/supavisor #1051</div>
+        <div class="card-tagline">Chasing a silent data-loss bug into the pooler</div>
+        <p class="card-desc">
+          <code>SERIALIZABLE</code> transactions through Supabase's transaction pooler report
+          success and silently discard their writes. I reproduced it on a fresh project; a Supabase
+          engineer routed the issue to the pooler repository within hours.
+        </p>
+        <ul class="card-highlights">
+          <li><strong>Disproved my own hypothesis</strong> &mdash; not SSI timing, but client-side prepared statements</li>
+          <li><strong>10/16 vs 0/16</strong> &mdash; failures with prepare on versus off; the surplus &ldquo;successful&rdquo; commits exactly accounted for the lost rows</li>
+          <li><strong>Shipped a workaround</strong> &mdash; plus a psycopg2 control and the probe that failed, because its null result bounds the timing window</li>
+        </ul>
+        <div class="card-stack">
+          <span class="stack-tag">PostgreSQL</span><span class="stack-tag">Supavisor</span>
+          <span class="stack-tag">postgres.js</span><span class="stack-tag">psycopg2</span>
+        </div>
+        <div class="card-links">
+          <a href="https://github.com/supabase/supavisor/issues/1051" target="_blank" class="link-btn primary">&#8599; The issue</a>
+          <a href="https://github.com/brianmgray/supabase-pool-bug-repro/pull/1" target="_blank" class="link-btn">&#8997; My PR</a>
+        </div>
+      </div>
+
       <!-- supabase-ai-eval -->
-      <div class="project-card featured fade-up" data-cat="flagship ai demo">
+      <div class="project-card featured fade-up" data-cat="flagship frontend ai demo">
         <div class="card-top">
           <span class="card-tag amber">RAG · MCP · Supabase</span>
           <span class="status-dot amber"></span>
@@ -403,7 +460,7 @@
         </div>
         <div class="card-links">
           <a href="https://youtu.be/e-qrZo0g7us?si=xrt2sxOakKw_RkpG" target="_blank" class="link-btn primary">▶ Demo</a>
-          <a href="https://kashaffatimajaffrey-design.github.io/supabase-ai-eval/" target="_blank" class="link-btn">↗ Live</a>
+          <a href="https://supabase-ai-eval.vercel.app" target="_blank" class="link-btn">&#8599; Live dashboard</a>
           <a href="https://github.com/kashaffatimajaffrey-design/supabase-ai-eval" target="_blank" class="link-btn">⌥ GitHub</a>
         </div>
       </div>
@@ -434,7 +491,6 @@
         </div>
         <div class="card-links">
           <a href="https://youtu.be/dibV1tmRAR4?si=zRMvGw8qgdG5MO3h" target="_blank" class="link-btn primary">▶ Demo</a>
-          <a href="https://github.com/kashaffatimajaffrey-design/SemiChain-AI" target="_blank" class="link-btn">⌥ GitHub</a>
         </div>
       </div>
 
@@ -548,28 +604,32 @@
       </div>
 
       <!-- CEREBRO -->
-      <div class="project-card fade-up" data-cat="ai demo">
+      <div class="project-card fade-up" data-cat="frontend fullstack demo">
         <div class="card-top">
-          <span class="card-tag red">Security · Real-time</span>
+          <span class="card-tag red">React 19 &middot; TypeScript &middot; CI</span>
         </div>
-        <div class="card-title">CEREBRO AI</div>
-        <div class="card-tagline">Production threat intelligence system</div>
+        <div class="card-title">CEREBRO</div>
+        <div class="card-tagline">Threat intelligence, behind an eight-check gate</div>
         <p class="card-desc">
-          Real-time threat intelligence with multi-source monitoring — news credibility analysis, cybersecurity log anomaly detection, and biometric auth integration. Neural network anomaly detection flags behavioral outliers in log streams before they escalate.
+          Threat and misinformation intelligence &mdash; React 19 and TypeScript on the front,
+          FastAPI and Postgres with pgvector behind. The part worth reading is the pipeline:
+          eight layered checks in CI, so a red check says exactly what to fix before anything
+          reaches a user.
         </p>
         <ul class="card-highlights">
-          <li><strong>Anomaly detection</strong> — neural network on live log streams</li>
-          <li><strong>Credibility analysis</strong> — NLP scoring of threat intel sources</li>
-          <li><strong>Biometric auth</strong> — hardware-linked access layer</li>
+          <li><strong>Eight-check gate</strong> &mdash; types, Prettier, ESLint + jsx-a11y, Vitest, MSW contract tests, bundle budget, Playwright, visual regression</li>
+          <li><strong>Every bug became a check</strong> &mdash; iOS in-app-browser sign-in, an API shape change, layout regressions</li>
+          <li><strong>Baselines built on CI</strong> &mdash; not a laptop, so font rendering is not read as a regression</li>
         </ul>
         <div class="card-stack">
-          <span class="stack-tag">Python</span><span class="stack-tag">NLP</span>
-          <span class="stack-tag">Vector DBs</span><span class="stack-tag">Neural Networks</span>
-          <span class="stack-tag">Real-time</span>
+          <span class="stack-tag">React 19</span><span class="stack-tag">TypeScript</span>
+          <span class="stack-tag">Vitest</span><span class="stack-tag">MSW</span>
+          <span class="stack-tag">Playwright</span><span class="stack-tag">FastAPI</span>
         </div>
         <div class="card-links">
-          <a href="https://youtu.be/j4T1OmaTml4" target="_blank" class="link-btn primary">▶ Demo</a>
-          <a href="https://github.com/kashaffatimajaffrey-design/Cerebro" target="_blank" class="link-btn">⌥ GitHub</a>
+          <a href="https://cerebro-sandy-beta.vercel.app" target="_blank" class="link-btn primary">&#8599; Live</a>
+          <a href="https://youtu.be/j4T1OmaTml4" target="_blank" class="link-btn">&#9654; Demo</a>
+          <a href="https://github.com/kashaffatimajaffrey-design/CEREBRO" target="_blank" class="link-btn">&#8997; GitHub</a>
         </div>
       </div>
 
