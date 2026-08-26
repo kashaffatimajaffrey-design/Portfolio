@@ -445,13 +445,20 @@
         <div class="card-title">supabase-ai-eval</div>
         <div class="card-tagline">Eval-first RAG agent with live MCP server</div>
         <p class="card-desc">
-          Eval-first RAG agent over Supabase docs — pgvector embeddings, LLM-as-judge scoring, live eval dashboard, MCP server exposing retrieval + generation tools to any MCP client. Every quality metric logged back to Supabase in real time.
+          Eval-first RAG agent over Supabase docs. Every retrieval and generation metric is logged
+          back to Postgres, and the dashboard reads that history live &mdash; so it shows the latest
+          run rather than a snapshot of one evening.
         </p>
         <ul class="card-highlights">
-          <li><strong>LLM-as-judge</strong> — automated scoring pipeline with Voyage AI embeddings</li>
-          <li><strong>MCP server</strong> — retrieval + generation exposed as typed tools</li>
-          <li><strong>Live dashboard</strong> — React + Vite eval metrics streamed from Supabase</li>
+          <li><strong>HNSW over ivfflat</strong> &mdash; the old index was returning one wrong result at 0.18 similarity; HNSW returns five led by the correct document at 0.69</li>
+          <li><strong>Hybrid retrieval</strong> &mdash; vector + Postgres full-text fused by reciprocal rank, for the exact identifiers embeddings dilute</li>
+          <li><strong>LLM-as-judge</strong> &mdash; automated scoring, with a guard that refuses to run against an empty corpus</li>
+          <li><strong>MCP server</strong> &mdash; retrieval and generation exposed as typed tools</li>
         </ul>
+        <p class="card-desc" style="font-size:0.88em;opacity:0.72">
+          Still being worked on. The demo video is from June and predates the retrieval work above
+          &mdash; the eval numbers in it are the broken ones. The live dashboard is current.
+        </p>
         <div class="card-stack">
           <span class="stack-tag">Python</span><span class="stack-tag">FastMCP</span>
           <span class="stack-tag">pgvector</span><span class="stack-tag">Voyage AI</span>
@@ -459,8 +466,8 @@
           <span class="stack-tag">Vite</span><span class="stack-tag">Supabase</span>
         </div>
         <div class="card-links">
-          <a href="https://youtu.be/e-qrZo0g7us?si=xrt2sxOakKw_RkpG" target="_blank" class="link-btn primary">▶ Demo</a>
-          <a href="https://supabase-ai-eval.vercel.app" target="_blank" class="link-btn">&#8599; Live dashboard</a>
+          <a href="https://supabase-ai-eval.vercel.app" target="_blank" class="link-btn primary">&#8599; Live dashboard</a>
+          <a href="https://youtu.be/e-qrZo0g7us?si=xrt2sxOakKw_RkpG" target="_blank" class="link-btn">&#9654; Demo (June)</a>
           <a href="https://github.com/kashaffatimajaffrey-design/supabase-ai-eval" target="_blank" class="link-btn">⌥ GitHub</a>
         </div>
       </div>
@@ -628,7 +635,6 @@
         </div>
         <div class="card-links">
           <a href="https://cerebro-sandy-beta.vercel.app" target="_blank" class="link-btn primary">&#8599; Live</a>
-          <a href="https://youtu.be/j4T1OmaTml4" target="_blank" class="link-btn">&#9654; Demo</a>
           <a href="https://github.com/kashaffatimajaffrey-design/CEREBRO" target="_blank" class="link-btn">&#8997; GitHub</a>
         </div>
       </div>

@@ -1008,7 +1008,6 @@
         </div>
         <div class="project-links">
           <a href="https://cerebro-sandy-beta.vercel.app" target="_blank" class="link-btn primary">&#8599; Live</a>
-          <a href="https://youtu.be/j4T1OmaTml4" target="_blank" class="link-btn">&#9654; Demo</a>
           <a href="https://github.com/kashaffatimajaffrey-design/CEREBRO" target="_blank" class="link-btn">&#8997; GitHub</a>
         </div>
       </div>
@@ -1018,9 +1017,16 @@
         <span class="project-tag amber">Supabase · RAG · MCP</span>
         <div class="project-title">supabase-ai-eval</div>
         <p class="project-desc">
-          Eval-first RAG agent over Supabase docs — pgvector embeddings, LLM-as-judge scoring,
-          live eval dashboard, MCP server exposing retrieval + generation tools to any MCP client.
-          Every quality metric logged back to Supabase.
+          Eval-first RAG agent over Supabase docs &mdash; pgvector with an HNSW index, hybrid
+          vector + full-text retrieval fused by reciprocal rank, LLM-as-judge scoring, and an MCP
+          server exposing retrieval and generation as typed tools. Every quality metric logged back
+          to Supabase, and read live by the dashboard.
+        </p>
+        <p class="project-desc" style="font-size:0.86em;opacity:0.72">
+          Still being worked on. The demo video is from June and predates the retrieval work
+          &mdash; an ivfflat index was destroying recall then, and the numbers in it are the broken
+          ones. The live dashboard is current: it reads the run history straight from Postgres, so
+          it shows whatever the latest eval produced.
         </p>
         <div class="project-stack">
           <span class="stack-tag">Python</span>
@@ -1032,8 +1038,8 @@
           <span class="stack-tag">Vite</span>
         </div>
         <div class="project-links">
-          <a href="https://youtu.be/e-qrZo0g7us?si=xrt2sxOakKw_RkpG" target="_blank" class="link-btn primary">▶ Demo</a>
-          <a href="https://supabase-ai-eval.vercel.app" target="_blank" class="link-btn">&#8599; Live dashboard</a>
+          <a href="https://youtu.be/e-qrZo0g7us?si=xrt2sxOakKw_RkpG" target="_blank" class="link-btn">&#9654; Demo (June)</a>
+          <a href="https://supabase-ai-eval.vercel.app" target="_blank" class="link-btn primary">&#8599; Live dashboard</a>
           <a href="https://kashaffatimajaffrey-design.github.io/supabase-ai-eval/" target="_blank" class="link-btn">&#8599; Docs</a>
           <a href="https://github.com/kashaffatimajaffrey-design/supabase-ai-eval" target="_blank" class="link-btn">⌥ GitHub</a>
         </div>
