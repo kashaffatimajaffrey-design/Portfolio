@@ -892,6 +892,11 @@
     }
 
     /* ─── RESPONSIVE ─── */
+    /* the absolutely-positioned stats column collides with the role pills below ~1024px */
+    @media (max-width: 1024px) {
+      .hero-stats { display: none; }
+    }
+
     @media (max-width: 768px) {
       nav { padding: 1rem 1.2rem; }
       .nav-links { display: none; }
