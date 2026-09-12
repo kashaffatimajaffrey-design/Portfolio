@@ -920,7 +920,6 @@
     <ul class="nav-links">
       <li><a href="#projects">Projects</a></li>
       <li><a href="#startup">Startup</a></li>
-      <li><a href="#lab">Lab</a></li>
       <li><a href="#open-source">Open Source</a></li>
       <li><a href="#publication">Paper</a></li>
       <li><a href="#experience">Experience</a></li>
@@ -1153,102 +1152,72 @@
     <div class="section-title">Occuris AI</div>
 
     <div class="startup-hero fade-up">
-      <span class="startup-badge">Actively Building</span>
-      <div class="startup-name">Semi<span>Chain</span> AI</div>
+      <span class="startup-badge">Pre-launch &middot; Building in public</span>
+      <div class="startup-name">Occuris <span>AI</span></div>
       <div class="startup-role">Founder &amp; Lead AI Engineer · Apr 2026 – Present</div>
       <p class="startup-desc">
-        Production-grade multi-agent, multi-tenant semiconductor supply chain intelligence platform.
-        6 autonomous agents — procurement, inventory, supplier risk, compliance, forecasting, reporting —
-        orchestrated via LangGraph over a hybrid RAG engine spanning 4 vector databases.
+        Operational intelligence for manufacturers, construction firms, and logistics operators whose
+        real record of work lives in WhatsApp groups, Excel sheets, and phone calls &mdash; not in an ERP.
+        The bet is <strong>Occuralog</strong>: turn that unstructured, code-switched record into a queryable
+        event log. <strong>Occuris Command</strong> (formerly SemiChain AI) is the multi-agent console on
+        top of it. No customers yet. Everything below is stated as it actually stands.
       </p>
 
       <div class="startup-highlights">
         <div class="highlight-item">
           <div class="highlight-dot"></div>
           <div class="highlight-text">
-            <strong>6-Agent LangGraph System</strong>
-            Procurement · Inventory · Supplier Risk · Compliance · Forecasting · Reporting
+            <strong>Occuralog &mdash; the differentiator</strong>
+            WhatsApp export &rarr; structured events. Rule-based classification on a small hand-labeled
+            Roman Urdu / English sample. LLM fallback for what the rules miss is the next milestone.
           </div>
         </div>
         <div class="highlight-item">
           <div class="highlight-dot"></div>
           <div class="highlight-text">
-            <strong>Hybrid RAG Engine</strong>
-            FAISS · ChromaDB · pgvector · Qdrant with ensemble reranking
+            <strong>Occuralog &mdash; built vs. not yet</strong>
+            Built: Rust ingestion core, Python WhatsApp parser v0.1. Not yet: Excel parser, Postgres
+            event store, natural-language query, MLflow tracking.
           </div>
         </div>
         <div class="highlight-item">
           <div class="highlight-dot"></div>
           <div class="highlight-text">
-            <strong>Enterprise Multi-Tenancy</strong>
-            RBAC · JWT auth · row-level security · 3 enterprise tenants
+            <strong>Occuris Command &mdash; working locally</strong>
+            FastAPI backend, React &ldquo;Command Deck&rdquo;, multi-agent chat on Gemini, SQLite
+            bill-of-materials store.
           </div>
         </div>
         <div class="highlight-item">
           <div class="highlight-dot"></div>
           <div class="highlight-text">
-            <strong>SAP S/4HANA Native</strong>
-            EKKO · EKPO · MARA table-level intelligence
+            <strong>Occuris Command &mdash; scaffolded, not live</strong>
+            Supabase / pgvector migration, LangGraph decision path, webhook intake and per-tenant alert
+            stream. Routes and schema exist; they need credentials and a storage migration.
           </div>
         </div>
         <div class="highlight-item">
           <div class="highlight-dot"></div>
           <div class="highlight-text">
-            <strong>Full Compliance Module</strong>
-            EAR/ITAR · conflict minerals (3TG) · RoHS · REACH
+            <strong>Multi-tenant by design, zero tenants in production</strong>
+            RBAC, JWT auth, and row-level security are in the schema. Nobody is on it yet.
           </div>
         </div>
         <div class="highlight-item">
           <div class="highlight-dot"></div>
           <div class="highlight-text">
-            <strong>Go-to-Market</strong>
-            ITCN Asia Sep 2026 · UAE & UK Pakistani trade clients
+            <strong>What I dropped</strong>
+            SAP S/4HANA integration &mdash; cut to lead with unstructured operational data instead.
+            Target customers: Pakistani trade and manufacturing firms in the UAE and UK.
+            Next: ITCN Asia, Karachi, 22&ndash;24 Sep 2026.
           </div>
         </div>
       </div>
 
       <div class="startup-links">
-        <a href="https://youtu.be/dibV1tmRAR4?si=zRMvGw8qgdG5MO3h" target="_blank" class="link-btn primary">▶ Watch Demo</a>
+        <a href="https://github.com/kashaffatimajaffrey-design/occuralog" target="_blank" rel="noopener" class="link-btn primary">&#8997; Occuralog on GitHub</a>
+        <a href="https://github.com/kashaffatimajaffrey-design/Occuris-Command" target="_blank" rel="noopener" class="link-btn">&#8997; Occuris Command on GitHub</a>
       </div>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <!-- LAB / EXPERIMENTAL -->
-  <div class="section" id="lab">
-    <div class="section-label">In the Lab</div>
-    <div class="section-title">What I'm building next</div>
-    <p class="lab-intro">
-      Early-stage, unfinished, and built in the open. Nothing here is a finished product yet —
-      this is where Occuris AI's next layer of internal tooling is taking shape.
-    </p>
-
-    <div class="projects-grid">
-
-      <!-- Occuralog -->
-      <div class="project-card lab fade-up">
-        <span class="project-tag steel">Experimental · Internal Tooling</span>
-        <div class="project-title">Occuralog</div>
-        <p class="project-desc">
-          The first real test bed for a language I'm designing as internal tooling for Occuris AI,
-          before it's anything more ambitious. Right now: a parser that turns raw WhatsApp group
-          exports from manufacturing and industrial-ops chats into structured, classifiable events —
-          rule-based classification on a hand-labeled Roman Urdu/English dataset (~150 messages,
-          ~68% accuracy), with an LLM fallback for the unclassified cases as the next milestone.
-          Small, scrappy, and the seed of something larger.
-        </p>
-        <div class="project-stack">
-          <span class="stack-tag">Python</span>
-          <span class="stack-tag">Rule-based NLP</span>
-          <span class="stack-tag">LLM Fallback (planned)</span>
-          <span class="stack-tag">Occuris AI</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/kashaffatimajaffrey-design/occuralog" target="_blank" class="link-btn primary">⌥ GitHub</a>
-        </div>
-      </div>
-
     </div>
   </div>
 
@@ -1338,11 +1307,11 @@
           <div class="exp-company">Occuris AI</div>
           <div class="exp-role">Founder & Lead AI Engineer</div>
           <ul class="exp-bullets">
-            <li>Architected SemiChain AI — 6-agent LangGraph system for semiconductor supply chains</li>
-            <li>Built hybrid RAG engine over FAISS, ChromaDB, pgvector, Qdrant with ensemble reranking</li>
-            <li>Engineered multi-tenant SaaS with RBAC, JWT, row-level security across 3 enterprise tenants</li>
-            <li>Integrated SAP S/4HANA natively at EKKO, EKPO, MARA table-level intelligence</li>
-            <li>Shipped full EAR/ITAR compliance module — conflict minerals (3TG), RoHS, REACH</li>
+            <li>Founded Occuris AI; pivoted to lead with Occuralog — a library that turns WhatsApp and Excel operational records into a unified, queryable event log</li>
+            <li>Built Occuralog v0.1: Rust ingestion core and a WhatsApp export parser with rule-based extraction on a small hand-labeled Roman Urdu/English sample</li>
+            <li>Built Occuris Command (formerly SemiChain AI): FastAPI + React multi-agent supply-chain console, running locally on Gemini and SQLite</li>
+            <li>Designed the multi-tenant schema (RBAC, JWT, row-level security) and Supabase/pgvector migration — scaffolded, pre-launch, no customers yet</li>
+            <li>Cut the planned SAP S/4HANA integration to focus on unstructured, code-switched operational data</li>
           </ul>
         </div>
       </div>
